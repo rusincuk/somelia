@@ -1,0 +1,23 @@
+﻿# Operating System Files
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Editor directories and files
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Build and report files
+*.docx
+*.pdf
+*.log
+scratch_crops/
+screenshots/

@@ -1,0 +1,251 @@
+﻿<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Контакти та про проєкт SOMELIA. Зворотний зв'язок, локація дегустаційного простору та співпраця з крафтовими виробниками.">
+  <title>SOMELIA — Про нас та контакти | Зворотний зв'язок</title>
+
+  <!-- Google Fonts: Playfair Display & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/mobile-nav.js"></script>
+</head>
+<body>
+
+  <!-- ================= SITE HEADER ================= -->
+  <header class="site-header" role="banner">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo" aria-label="SOMELIA — На головну">
+        <img src="assets/images/somelia_sheep_icon.png" alt="SOMELIA Логотип" class="logo-icon" width="38" height="38">
+        <span class="logo-text">SOMELIA</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="main-nav" aria-label="Головна навігація сайту">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="index.html" class="nav-link">Головна</a></li>
+          <li class="nav-item"><a href="cheese-catalog.html" class="nav-link">Каталог сирів</a></li>
+          <li class="nav-item"><a href="wine-catalog.html" class="nav-link">Каталог вин</a></li>
+          <li class="nav-item"><a href="pairing-wizard.html" class="nav-link">Підбір пари</a></li>
+          <li class="nav-item"><a href="favorites.html" class="nav-link">Обрані пари</a></li>
+          <li class="nav-item dropdown">
+            <a href="contacts.html" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+              Каталоги <span class="chevron-icon">▾</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="cheese-catalog.html">Каталог сирів</a></li>
+              <li><a href="wine-catalog.html">Каталог вин</a></li>
+              <li><a href="product-card.html">Картка сиру</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a href="contacts.html" class="nav-link active dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+              Більше <span class="chevron-icon">▾</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="contacts.html">Про нас та контакти</a></li>
+              <li><a href="pairing-result.html">Демо результату</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <a href="contacts.html" class="login-link">Увійти</a>
+        <a href="pairing-wizard.html" class="btn btn-primary-dark">Почати</a>
+        <button class="mobile-menu-btn" id="mobileMenuToggle" onclick="toggleSomeliaMenu(event)" aria-label="Відкрити головне меню" aria-expanded="false">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Navigation -->
+    <div id="mobileMenu" class="mobile-nav-drawer" style="display:none;">
+      <nav class="mobile-nav-links">
+        <a href="index.html">Головна</a>
+        <a href="cheese-catalog.html">Каталог сирів</a>
+        <a href="wine-catalog.html">Каталог вин</a>
+        <a href="pairing-wizard.html">Підбір пари</a>
+        <a href="favorites.html">Обрані пари</a>
+        <a href="contacts.html">Про нас та контакти</a>
+      </nav>
+      <div class="mobile-nav-actions">
+        <a href="contacts.html" class="mobile-btn-outline">Увійти в кабінет</a>
+        <a href="pairing-wizard.html" class="mobile-btn-primary">Почати підбір пари</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= BREADCRUMBS ================= -->
+  <nav class="breadcrumbs-nav" aria-label="Шлях сторінками">
+    <div class="container">
+      <ol class="breadcrumbs-list">
+        <li><a href="index.html">Головна</a></li>
+        <li class="breadcrumbs-sep">/</li>
+        <li class="breadcrumbs-current" aria-current="page">Про нас та контакти</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- ================= MAIN CONTENT ================= -->
+  <main id="main-content">
+
+    <section class="page-header-banner">
+      <div class="container">
+        <span class="section-eyebrow">ПРО ПРОЄКТ ТА КОНТАКТИ</span>
+        <h1 class="page-header-title">Історія незалежних сироварів та виноробів</h1>
+        <p class="page-header-subtitle">Ми об'єднуємо крафтові локальні господарства, які створюють чесний продукт із душею української землі.</p>
+      </div>
+    </section>
+
+    <section class="contacts-section">
+      <div class="container">
+        <div class="contact-layout-grid">
+          
+          <!-- Left: Info -->
+          <div>
+            <span class="eyebrow-gold">НАША МІСІЯ</span>
+            <h2 style="font-family:var(--font-serif); font-size:2rem; color:var(--color-primary-dark); margin-bottom:12px;">Культура справжнього смаку</h2>
+            <p style="color:var(--color-text-muted); font-size:1rem; line-height:1.6; margin-bottom:20px;">
+              SOMELIA виникла з бажання відкрити багатство українських теруарів. Замість складного ресторанного жаргону ми пропонуємо чесний, точний та зрозумілий підбір сирів та вин, розроблений спільно з найкращими крафтовими сироварами та сомельє.
+            </p>
+
+            <div style="background:#FFF; padding:24px; border-radius:var(--radius-lg); border:1px solid var(--color-border); box-shadow:var(--shadow-sm); margin-bottom:24px;">
+              <h3 style="font-family:var(--font-serif); font-size:1.2rem; color:var(--color-primary-dark); margin-bottom:12px;">Контактна інформація</h3>
+              <p style="margin-bottom:8px; font-size:0.95rem;"><strong>📍 Адреса простору:</strong> Київ, вул. Смаку, 12 (Дегустаційний зал)</p>
+              <p style="margin-bottom:8px; font-size:0.95rem;"><strong>✉️ Email:</strong> hello@somelia.ua</p>
+              <p style="margin-bottom:8px; font-size:0.95rem;"><strong>📞 Телефон:</strong> +380 (44) 234-56-78</p>
+              <p style="margin-bottom:0; font-size:0.95rem;"><strong>🕒 Години роботи:</strong> Щодня з 10:00 до 21:00</p>
+            </div>
+
+            <div style="display:flex; gap:12px;">
+              <a href="cheese-catalog.html" class="btn btn-primary-dark">Каталог сирів</a>
+              <a href="wine-catalog.html" class="btn btn-outline-dark">Каталог вин</a>
+            </div>
+          </div>
+
+          <!-- Right: Feedback Form -->
+          <div class="contact-form-card">
+            <h2 style="font-family:var(--font-serif); font-size:1.8rem; color:var(--color-primary-dark); margin-bottom:16px;">Зворотний зв'язок</h2>
+            <form action="#" method="POST" onsubmit="alert('Дякуємо! Ваше повідомлення надіслано сомельє SOMELIA.'); return false;">
+              <div class="form-group">
+                <label class="form-label" for="user-name">Ваше ім'я:</label>
+                <input type="text" id="user-name" class="form-input" placeholder="Олександр / Марія" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="user-email">Електронна пошта:</label>
+                <input type="email" id="user-email" class="form-input" placeholder="name@example.com" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="topic-select">Тема звернення:</label>
+                <select id="topic-select" class="form-select">
+                  <option value="pairing">Індивідуальний підбір пари для свята</option>
+                  <option value="producer">Я виробник: хочу співпрацювати</option>
+                  <option value="question">Запитання про сири або доставку</option>
+                  <option value="other">Інше питання</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="user-msg">Повідомлення:</label>
+                <textarea id="user-msg" class="form-textarea" placeholder="Опишіть ваше запитання або побажання щодо дегустації..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-gold" style="width:100%; font-size:1rem; padding:12px;">Надіслати повідомлення →</button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ================= INTERACTIVE GOOGLE MAPS SECTION ================= -->
+    <section class="container" style="margin-bottom: 60px;">
+      <h2 style="font-family:var(--font-serif); font-size:1.8rem; color:var(--color-primary-dark); margin-bottom:16px;">Локація дегустаційного залу на карті</h2>
+      <figure style="margin:0; border-radius:16px; overflow:hidden; box-shadow:0 10px 25px rgba(0,0,0,0.08); border:1px solid #E5DFD5;">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2540.067343169826!2d30.514757376884633!3d50.46781297159495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce69527ec565%3A0x64795b6cbce928d1!2z0LLRg9C70LjRhtGPINCh0L_QsNGB0YzQutCwLCAxMiwg0JrQuNGX0LIsIDAyMDAw!5e0!3m2!1suk!2sua!4v1714000000000!5m2!1suk!2sua" 
+          width="100%" 
+          height="400" 
+          style="border:0; display:block;" 
+          title="Інтерактивна Google-карта дегустаційного залу SOMELIA (Київ, вул. Спаська, 12)" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade" 
+          allowfullscreen>
+        </iframe>
+        <figcaption style="padding:10px 16px; background:#F4EFE6; font-size:0.85rem; color:#706050; font-style:italic;">
+          📍 Дегустаційний простір SOMELIA: м. Київ, вул. Спаська, 12 (Поділ)
+        </figcaption>
+      </figure>
+    </section>
+
+  </main>
+
+  <!-- ================= SITE FOOTER ================= -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-container">
+      <div class="footer-top-grid">
+        <div class="footer-col brand-col">
+          <div class="footer-brand">
+            <img src="assets/images/somelia_sheep_icon.png" alt="SOMELIA" class="footer-logo-img" width="34" height="34">
+            <span class="footer-brand-title">SOMELIA</span>
+          </div>
+          <p class="footer-tagline">Платформа гастрономічної культури, що об'єднує поціновувачів крафтового українського сиру та шляхетного вина.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Навігація</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Головна</a></li>
+            <li><a href="cheese-catalog.html">Каталог сирів</a></li>
+            <li><a href="wine-catalog.html">Каталог вин</a></li>
+            <li><a href="pairing-wizard.html">Майстер підбору</a></li>
+            <li><a href="favorites.html">Обрані пари</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Терруари</h4>
+          <ul class="footer-links">
+            <li><a href="cheese-catalog.html">Карпати</a></li>
+            <li><a href="wine-catalog.html">Одещина</a></li>
+            <li><a href="cheese-catalog.html">Закарпаття</a></li>
+            <li><a href="cheese-catalog.html">Полтавщина</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Контакти</h4>
+          <p class="footer-contact-item">Київ, вул. Смаку, 12</p>
+          <p class="footer-contact-item">hello@somelia.ua</p>
+          <div class="footer-socials">
+            <a href="contacts.html">Про нас</a>
+            <a href="contacts.html">Зворотний зв'язок</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <p class="copyright">© 2026 SOMELIA. Усі права захищено. Лабораторна робота №5.</p>
+        <p class="made-with">Розроблено за Figma-прототипом (багатосторінкова верстка на чистому HTML5 / CSS3)</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Universal Mobile Navigation Script -->
+  <script src="js/mobile-nav.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,369 @@
+﻿<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Каталог українських крафтових сирів SOMELIA. Локальні сироварні, чесні рецептури, витримка та підбір ідеального вина.">
+  <title>SOMELIA — Каталог сирів | Крафт, терруар, смак</title>
+
+  <!-- Google Fonts: Playfair Display & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/mobile-nav.js"></script>
+</head>
+<body>
+
+  <!-- ================= SITE HEADER ================= -->
+  <header class="site-header" role="banner">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo" aria-label="SOMELIA — На головну">
+        <img src="assets/images/somelia_sheep_icon.png" alt="SOMELIA Логотип" class="logo-icon" width="38" height="38">
+        <span class="logo-text">SOMELIA</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="main-nav" aria-label="Головна навігація сайту">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="index.html" class="nav-link">Головна</a></li>
+          <li class="nav-item"><a href="cheese-catalog.html" class="nav-link active">Каталог сирів</a></li>
+          <li class="nav-item"><a href="wine-catalog.html" class="nav-link">Каталог вин</a></li>
+          <li class="nav-item"><a href="pairing-wizard.html" class="nav-link">Підбір пари</a></li>
+          <li class="nav-item"><a href="favorites.html" class="nav-link">Обрані пари</a></li>
+          <li class="nav-item dropdown">
+            <a href="cheese-catalog.html" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+              Каталоги <span class="chevron-icon">▾</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="cheese-catalog.html">Каталог сирів</a></li>
+              <li><a href="wine-catalog.html">Каталог вин</a></li>
+              <li><a href="product-card.html">Картка сиру</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a href="contacts.html" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+              Більше <span class="chevron-icon">▾</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="contacts.html">Про нас та контакти</a></li>
+              <li><a href="pairing-result.html">Демо результату</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <a href="contacts.html" class="login-link">Увійти</a>
+        <a href="pairing-wizard.html" class="btn btn-primary-dark">Почати</a>
+        <button class="mobile-menu-btn" id="mobileMenuToggle" onclick="toggleSomeliaMenu(event)" aria-label="Відкрити головне меню" aria-expanded="false">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Navigation -->
+    <div id="mobileMenu" class="mobile-nav-drawer" style="display:none;">
+      <nav class="mobile-nav-links">
+        <a href="index.html">Головна</a>
+        <a href="cheese-catalog.html">Каталог сирів</a>
+        <a href="wine-catalog.html">Каталог вин</a>
+        <a href="pairing-wizard.html">Підбір пари</a>
+        <a href="favorites.html">Обрані пари</a>
+        <a href="contacts.html">Про нас та контакти</a>
+      </nav>
+      <div class="mobile-nav-actions">
+        <a href="contacts.html" class="mobile-btn-outline">Увійти в кабінет</a>
+        <a href="pairing-wizard.html" class="mobile-btn-primary">Почати підбір пари</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= BREADCRUMBS ================= -->
+  <nav class="breadcrumbs-nav" aria-label="Шлях сторінками">
+    <div class="container">
+      <ol class="breadcrumbs-list">
+        <li><a href="index.html">Головна</a></li>
+        <li class="breadcrumbs-sep">/</li>
+        <li class="breadcrumbs-current" aria-current="page">Каталог сирів</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- ================= MAIN CONTENT ================= -->
+  <main id="main-content">
+
+    <!-- 1. SECTION: HERO «Каталог сирів» -->
+    <section class="catalog-hero-section" aria-labelledby="catalog-hero-title">
+      <div class="catalog-hero-bg">
+        <img src="assets/images/cheese_hero.png" alt="Крафтова сирна тарілка з вином та свічкою" class="catalog-hero-img">
+        <div class="catalog-hero-overlay"></div>
+      </div>
+      <div class="container catalog-hero-container">
+        <div class="catalog-hero-content">
+          <span class="eyebrow-gold">КРАФТ • ТЕРРУАР • СМАК</span>
+          <h1 id="catalog-hero-title" class="catalog-hero-title">Каталог сирів</h1>
+          <p class="catalog-hero-subtitle">Локальні виробники, чесні рецептури та смакові профілі, які варто знати в обличчя.</p>
+          <div class="catalog-hero-btns">
+            <a href="#cheese-collection" class="btn btn-gold">Переглянути каталог</a>
+            <a href="pairing-wizard.html" class="btn btn-outline-light">Підібрати пару</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Terroir Regions Yellow Strip -->
+      <nav class="terroir-strip" aria-label="Регіони терруарів">
+        <div class="container terroir-container">
+          <span class="terroir-tag">ЗАКАРПАТТЯ</span>
+          <span class="terroir-sep">•</span>
+          <span class="terroir-tag">КИЇВЩИНА</span>
+          <span class="terroir-sep">•</span>
+          <span class="terroir-tag">ОДЕЩИНА</span>
+          <span class="terroir-sep">•</span>
+          <span class="terroir-tag">ЛЬВІВЩИНА</span>
+          <span class="terroir-sep">•</span>
+          <span class="terroir-tag">ПОЛТАВЩИНА</span>
+          <span class="terroir-sep">•</span>
+          <span class="terroir-tag">ВІННИЧЧИНА</span>
+          <span class="terroir-sep">•</span>
+          <span class="terroir-tag">ХЕРСОНЩИНА</span>
+        </div>
+      </nav>
+    </section>
+
+    <!-- 2. SECTION: ФІЛЬТРАЦІЯ «Знайдіть свій сир без зайвих слів» -->
+    <section class="find-cheese-section" aria-labelledby="find-cheese-title">
+      <div class="container find-cheese-container">
+        <!-- Left: Filters & Form -->
+        <div class="find-cheese-content">
+          <span class="section-eyebrow">ПОШУК</span>
+          <h2 id="find-cheese-title" class="find-cheese-title">Знайдіть свій сир без зайвих слів</h2>
+          <p class="find-cheese-desc">Фільтри працюють просто. Обираєте регіон, молоко, витримку або смак і бачите лише те, що варте уваги.</p>
+
+          <form class="cheese-filter-form" role="search" aria-label="Фільтри сирів">
+            <!-- Filter Group: Milk Type -->
+            <fieldset class="filter-group">
+              <legend class="filter-label">ТИП МОЛОКА</legend>
+              <div class="filter-pill-options">
+                <button type="button" class="btn-filter-pill active" aria-pressed="true">Овече</button>
+                <button type="button" class="btn-filter-pill" aria-pressed="false">Козяче</button>
+                <button type="button" class="btn-filter-pill" aria-pressed="false">Коров'яче</button>
+                <button type="button" class="btn-filter-pill" aria-pressed="false">Змішане</button>
+              </div>
+            </fieldset>
+
+            <!-- Filter Group: Aging -->
+            <fieldset class="filter-group">
+              <legend class="filter-label">ВИТРИМКА</legend>
+              <div class="filter-pill-options">
+                <button type="button" class="btn-filter-pill" aria-pressed="false">Молодий</button>
+                <button type="button" class="btn-filter-pill active" aria-pressed="true">Витриманий</button>
+                <button type="button" class="btn-filter-pill" aria-pressed="false">Довго витриманий</button>
+              </div>
+            </fieldset>
+
+            <!-- Buttons -->
+            <div class="filter-actions-row">
+              <button type="button" class="btn btn-primary-dark">Застосувати фільтри</button>
+              <button type="reset" class="btn btn-outline-dark">Скинути</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Right: Rounded Photo -->
+        <div class="find-cheese-visual">
+          <figure class="cheese-photo-frame">
+            <img src="assets/images/soft_cheese.png" alt="Крафтовий м'який сир на сланцевій дошці з волоськими горіхами та розмарином" class="rounded-cheese-img" loading="lazy">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. SECTION: «Крафтові сири» (Колекція) -->
+    <section id="cheese-collection" class="collection-section" aria-labelledby="collection-title">
+      <div class="container">
+        <header class="section-header-center">
+          <span class="eyebrow-gold">КОЛЕКЦІЯ</span>
+          <h2 id="collection-title" class="collection-title">Крафтові сири</h2>
+          <p class="collection-subtitle">Смаки, які неможливо підробити.</p>
+      
+    </header>
+
+        <!-- 3 Cards Grid -->
+        <div class="cards-grid cards-grid-3">
+          <!-- Card 1: Гуцульський овечий -->
+          <article class="cheese-craft-card">
+            <div class="cheese-craft-img-wrap">
+              <img src="assets/images/cheese_hutsul.png" alt="Гуцульський овечий сир на тлі Карпатських гір" class="cheese-craft-img" loading="lazy">
+            </div>
+            <div class="cheese-craft-body">
+              <h3 class="cheese-craft-title">Гуцульський овечий</h3>
+              
+              <!-- Badges Row 1: Region & Characteristics -->
+              <div class="badge-row">
+                <span class="badge-ivory">Карпати</span>
+                <span class="badge-ivory">Овече</span>
+                <span class="badge-ivory">Витриманий</span>
+              </div>
+
+              <!-- Badges Row 2: Taste Profile -->
+              <div class="badge-row">
+                <span class="badge-amber">Горіховий</span>
+                <span class="badge-amber">Пряний</span>
+                <span class="badge-amber">Землистий</span>
+              </div>
+
+              <p class="cheese-craft-desc">Твердий сир з гірських полонин. Тонкий узор насиченого червоного вина.</p>
+              
+              <div style="margin-top: 14px;">
+                <a href="product-card.html" class="btn btn-outline-dark" style="font-size:0.85rem; padding: 6px 16px; width:100%;">Картка сиру &amp; деталі →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2: Полтавський ніжний -->
+          <article class="cheese-craft-card">
+            <div class="cheese-craft-img-wrap">
+              <img src="assets/images/cheese_poltava.png" alt="Полтавський ніжний козячий сир з лавандою та медом" class="cheese-craft-img" loading="lazy">
+            </div>
+            <div class="cheese-craft-body">
+              <h3 class="cheese-craft-title">Полтавський ніжний</h3>
+
+              <!-- Badges Row 1: Region & Characteristics -->
+              <div class="badge-row">
+                <span class="badge-ivory">Полтавщина</span>
+                <span class="badge-ivory">Козяче</span>
+                <span class="badge-ivory">Молодий</span>
+              </div>
+
+              <!-- Badges Row 2: Taste Profile -->
+              <div class="badge-row">
+                <span class="badge-amber">Фруктовий</span>
+                <span class="badge-amber">Вершковий</span>
+                <span class="badge-amber">Свіжий</span>
+              </div>
+
+              <p class="cheese-craft-desc">Ніжний козячий. Пасуватиме до хрусткого білого або легкого рожевого.</p>
+
+              <div style="margin-top: 14px;">
+                <a href="pairing-wizard.html" class="btn btn-outline-dark" style="font-size:0.85rem; padding: 6px 16px; width:100%;">Підібрати вино до сиру →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3: Закарпатський напівтвердий -->
+          <article class="cheese-craft-card">
+            <div class="cheese-craft-img-wrap">
+              <img src="assets/images/cheese_zakarpattya.png" alt="Закарпатський напівтвердий сир з келихом вина та осіннім листям" class="cheese-craft-img" loading="lazy">
+            </div>
+            <div class="cheese-craft-body">
+              <h3 class="cheese-craft-title">Закарпатський напівтвердий</h3>
+
+              <!-- Badges Row 1: Region & Characteristics -->
+              <div class="badge-row">
+                <span class="badge-ivory">Закарпаття</span>
+                <span class="badge-ivory">Коров'яче</span>
+              </div>
+
+              <!-- Badges Row 2: Taste Profile -->
+              <div class="badge-row">
+                <span class="badge-amber">Маслянистий</span>
+                <span class="badge-amber">Солодкавий</span>
+              </div>
+
+              <p class="cheese-craft-desc">Характерний аромат гірських трав. Ідеальний з витриманим білим або теплим червоним вином.</p>
+
+              <div style="margin-top: 14px;">
+                <a href="product-card.html" class="btn btn-outline-dark" style="font-size:0.85rem; padding: 6px 16px; width:100%;">Картка сиру &amp; деталі →</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Section Bottom Button -->
+        <div class="collection-bottom-cta">
+          <a href="pairing-wizard.html" class="btn btn-outline-collection">Підібрати винну пару для сирів</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. SECTION: ПІДБІР ПАРИ (Wine Bordeaux Banner) -->
+    <section class="wine-banner-section" aria-labelledby="wine-banner-title">
+      <div class="container wine-banner-container">
+        <span class="eyebrow-wine">ПІДБІР ПАРИ</span>
+        <h2 id="wine-banner-title" class="wine-banner-title">Оберіть сир і вино</h2>
+        <p class="wine-banner-subtitle">Створіть неповторну гастрономічну симфонію для вашого вечора за лічені хвилини.</p>
+        <div class="wine-banner-cta">
+          <a href="pairing-wizard.html" class="btn btn-gold">Спробувати майстер підбору</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= SITE FOOTER ================= -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-container">
+      <div class="footer-top-grid">
+        <!-- Brand Info -->
+        <div class="footer-col brand-col">
+          <div class="footer-brand">
+            <img src="assets/images/somelia_sheep_icon.png" alt="SOMELIA" class="footer-logo-img" width="34" height="34">
+            <span class="footer-brand-title">SOMELIA</span>
+          </div>
+          <p class="footer-tagline">Платформа гастрономічної культури, що об'єднує поціновувачів крафтового українського сиру та шляхетного вина.</p>
+        </div>
+
+        <!-- Nav Links -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Навігація</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Головна</a></li>
+            <li><a href="cheese-catalog.html">Каталог сирів</a></li>
+            <li><a href="wine-catalog.html">Каталог вин</a></li>
+            <li><a href="pairing-wizard.html">Майстер підбору</a></li>
+            <li><a href="favorites.html">Обрані пари</a></li>
+          </ul>
+        </div>
+
+        <!-- Terroirs -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Терруари</h4>
+          <ul class="footer-links">
+            <li><a href="cheese-catalog.html">Закарпаття</a></li>
+            <li><a href="cheese-catalog.html">Київщина &amp; Поділля</a></li>
+            <li><a href="cheese-catalog.html">Південні терруари Одеси</a></li>
+            <li><a href="cheese-catalog.html">Полонини Карпат</a></li>
+          </ul>
+        </div>
+
+        <!-- Contacts -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Контакти</h4>
+          <p class="footer-contact-item">Київ, вул. Смаку, 12</p>
+          <p class="footer-contact-item">hello@somelia.ua</p>
+          <div class="footer-socials">
+            <a href="contacts.html">Про нас</a>
+            <a href="contacts.html">Зворотний зв'язок</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <p class="copyright">© 2026 SOMELIA. Усі права захищено. Лабораторна робота №5.</p>
+        <p class="made-with">Розроблено за Figma-прототипом (багатосторінкова верстка на чистому HTML5 / CSS3)</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Universal Mobile Navigation Script -->
+  <script src="js/mobile-nav.js"></script>
+</body>
+</html>
+
