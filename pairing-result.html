@@ -1,0 +1,236 @@
+﻿<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Результат підбору пари SOMELIA: Гуцульський овечий сир та Одеський Чорний. Match Score 96%.">
+  <title>SOMELIA — Результат підбору | Ідеальна пара знайдена (96% Match)</title>
+
+  <!-- Google Fonts: Playfair Display & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/mobile-nav.js"></script>
+</head>
+<body>
+
+  <!-- ================= SITE HEADER ================= -->
+  <header class="site-header" role="banner">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo" aria-label="SOMELIA — На головну">
+        <img src="assets/images/somelia_sheep_icon.png" alt="SOMELIA Логотип" class="logo-icon" width="38" height="38">
+        <span class="logo-text">SOMELIA</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="main-nav" aria-label="Головна навігація сайту">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="index.html" class="nav-link">Головна</a></li>
+          <li class="nav-item"><a href="cheese-catalog.html" class="nav-link">Каталог сирів</a></li>
+          <li class="nav-item"><a href="wine-catalog.html" class="nav-link">Каталог вин</a></li>
+          <li class="nav-item"><a href="pairing-wizard.html" class="nav-link active">Підбір пари</a></li>
+          <li class="nav-item"><a href="favorites.html" class="nav-link">Обрані пари</a></li>
+          <li class="nav-item dropdown">
+            <a href="pairing-wizard.html" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+              Каталоги <span class="chevron-icon">▾</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="cheese-catalog.html">Каталог сирів</a></li>
+              <li><a href="wine-catalog.html">Каталог вин</a></li>
+              <li><a href="product-card.html">Картка сиру</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a href="contacts.html" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+              Більше <span class="chevron-icon">▾</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="contacts.html">Про нас та контакти</a></li>
+              <li><a href="pairing-result.html">Демо результату</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <a href="contacts.html" class="login-link">Увійти</a>
+        <a href="pairing-wizard.html" class="btn btn-primary-dark">Почати</a>
+        <button class="mobile-menu-btn" id="mobileMenuToggle" onclick="toggleSomeliaMenu(event)" aria-label="Відкрити головне меню" aria-expanded="false">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Navigation -->
+    <div id="mobileMenu" class="mobile-nav-drawer" style="display:none;">
+      <nav class="mobile-nav-links">
+        <a href="index.html">Головна</a>
+        <a href="cheese-catalog.html">Каталог сирів</a>
+        <a href="wine-catalog.html">Каталог вин</a>
+        <a href="pairing-wizard.html">Підбір пари</a>
+        <a href="favorites.html">Обрані пари</a>
+        <a href="contacts.html">Про нас та контакти</a>
+      </nav>
+      <div class="mobile-nav-actions">
+        <a href="contacts.html" class="mobile-btn-outline">Увійти в кабінет</a>
+        <a href="pairing-wizard.html" class="mobile-btn-primary">Почати підбір пари</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= BREADCRUMBS ================= -->
+  <nav class="breadcrumbs-nav" aria-label="Шлях сторінками">
+    <div class="container">
+      <ol class="breadcrumbs-list">
+        <li><a href="index.html">Головна</a></li>
+        <li class="breadcrumbs-sep">/</li>
+        <li><a href="pairing-wizard.html">Майстер підбору</a></li>
+        <li class="breadcrumbs-sep">/</li>
+        <li class="breadcrumbs-current" aria-current="page">Результат підбору</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- ================= MAIN CONTENT ================= -->
+  <main id="main-content">
+
+    <section class="result-section">
+      <div class="container">
+        <div class="result-card-main">
+          
+          <!-- Score Banner -->
+          <div class="result-score-banner">
+            <div class="score-circle-lg">
+              <span class="score-circle-num">96%</span>
+              <span class="score-circle-label">Match</span>
+            </div>
+            <div>
+              <span class="eyebrow-gold">РЕЗУЛЬТАТ ПІДБОРУ</span>
+              <h1 class="page-header-title" style="color:#FFF; text-align:left; font-size:2.4rem;">Ідеальна пара знайдена!</h1>
+              <p style="color:var(--color-text-light-muted); font-size:1rem;">Match Score вгадав ваш смак: таніни вина бездоганно врівноважують овечий полонинський сир.</p>
+            </div>
+          </div>
+
+          <!-- Duo Pair Visual Cards -->
+          <div class="result-pair-duo">
+            <!-- Cheese Card -->
+            <div class="pair-duo-card">
+              <img src="assets/images/cheese_hutsul.png" alt="Гуцульський овечий сир" class="pair-duo-img">
+              <div class="pair-duo-content">
+                <span class="badge-ivory" style="margin-bottom:6px;">Крафтовий сир</span>
+                <h3 style="font-family:var(--font-serif); font-size:1.3rem; color:#FFF; margin-bottom:4px;">Гуцульський овечий</h3>
+                <p style="font-size:0.85rem; color:var(--color-text-light-muted); margin-bottom:10px;">Карпати • Витриманий 18 міс. • Горіховий, пряний профіль.</p>
+                <a href="product-card.html" class="btn btn-outline-light" style="width:100%; font-size:0.85rem; padding:6px 12px;">Картка сиру →</a>
+              </div>
+            </div>
+
+            <!-- Plus Sign -->
+            <div class="pair-duo-plus">+</div>
+
+            <!-- Wine Card -->
+            <div class="pair-duo-card">
+              <img src="assets/images/pairing_3.png" alt="Одеський Чорний вино" class="pair-duo-img">
+              <div class="pair-duo-content">
+                <span class="badge-amber" style="margin-bottom:6px;">Крафтове вино</span>
+                <h3 style="font-family:var(--font-serif); font-size:1.3rem; color:#FFF; margin-bottom:4px;">Одеський Чорний 2021</h3>
+                <p style="font-size:0.85rem; color:var(--color-text-light-muted); margin-bottom:10px;">Придунав'я • Червоне сухе • Чорнослив, шоколад, дуб.</p>
+                <a href="wine-catalog.html" class="btn btn-outline-light" style="width:100%; font-size:0.85rem; padding:6px 12px;">Винний каталог →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Breakdown Explanation -->
+          <div class="breakdown-box">
+            <h2 class="breakdown-title">Детальний розбір чому ця пара працює</h2>
+            <div class="breakdown-list">
+              <div class="breakdown-item">
+                <span class="breakdown-badge">50% Баланс смаку</span>
+                <span>Таніни вина зрізають жирність сиру, а горіхові ноти підкреслюють дубові відтінки витримки пляшки.</span>
+              </div>
+              <div class="breakdown-item">
+                <span class="breakdown-badge">30% Текстура</span>
+                <span>Твердий сир з гірських полонин тримає удар насиченого червоного вина, створюючи тривалий оксамитовий післясмак.</span>
+              </div>
+              <div class="breakdown-item">
+                <span class="breakdown-badge">20% Терруар</span>
+                <span>Контраст гірського карпатського різнотрав'я та південного бессарабського сонця об'єднує дві протилежності в єдину гармонію.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Actions -->
+          <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+            <a href="favorites.html" class="btn btn-gold">Зберегти в Обрані ⭐</a>
+            <a href="pairing-wizard.html" class="btn btn-outline-light">Підібрати іншу пару ↺</a>
+            <a href="cheese-catalog.html" class="btn btn-outline-light">Всі сири каталогу</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= SITE FOOTER ================= -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-container">
+      <div class="footer-top-grid">
+        <div class="footer-col brand-col">
+          <div class="footer-brand">
+            <img src="assets/images/somelia_sheep_icon.png" alt="SOMELIA" class="footer-logo-img" width="34" height="34">
+            <span class="footer-brand-title">SOMELIA</span>
+          </div>
+          <p class="footer-tagline">Платформа гастрономічної культури, що об'єднує поціновувачів крафтового українського сиру та шляхетного вина.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Навігація</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Головна</a></li>
+            <li><a href="cheese-catalog.html">Каталог сирів</a></li>
+            <li><a href="wine-catalog.html">Каталог вин</a></li>
+            <li><a href="pairing-wizard.html">Майстер підбору</a></li>
+            <li><a href="favorites.html">Обрані пари</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Терруари</h4>
+          <ul class="footer-links">
+            <li><a href="cheese-catalog.html">Карпати</a></li>
+            <li><a href="wine-catalog.html">Одещина</a></li>
+            <li><a href="cheese-catalog.html">Закарпаття</a></li>
+            <li><a href="cheese-catalog.html">Полтавщина</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Контакти</h4>
+          <p class="footer-contact-item">Київ, вул. Смаку, 12</p>
+          <p class="footer-contact-item">hello@somelia.ua</p>
+          <div class="footer-socials">
+            <a href="contacts.html">Про нас</a>
+            <a href="contacts.html">Зворотний зв'язок</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <p class="copyright">© 2026 SOMELIA. Усі права захищено. Лабораторна робота №5.</p>
+        <p class="made-with">Розроблено за Figma-прототипом (багатосторінкова верстка на чистому HTML5 / CSS3)</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Universal Mobile Navigation Script -->
+  <script src="js/mobile-nav.js"></script>
+</body>
+</html>
+
