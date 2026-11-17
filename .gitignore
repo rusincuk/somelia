@@ -16,6 +16,8 @@ Desktop.ini
 *.sw?
 
 # Build and report files
+__pycache__/
+*.pyc
 *.docx
 *.pdf
 *.log
