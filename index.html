@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Somelia — Гід крафтовими сирами та винами</title>
+  
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- CDN СТИЛІ ПЛАГІНІВ (Swiper.js v11 & Fancybox v5) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+</head>
+<body>
+
+  <!-- ХЕДЕР -->
+  <header class="header">
+    <div class="container header-container">
+      <div class="logo">
+        <span class="logo-icon">🍷</span>
+        <span class="logo-text">SOMELIA</span>
+      </div>
+      <nav class="nav">
+        <a href="#hero" class="nav-link">Головна</a>
+        <a href="#matcher" class="nav-link">Підбір пар</a>
+        <a href="#gallery" class="nav-link">Винний льох</a>
+        <a href="#reviews" class="nav-link">Відгуки сомельє</a>
+      </nav>
+      <span class="badge">Craft & Boutique</span>
+    </div>
+  </header>
+
+  <!-- HERO SECTION З TYPED.JS -->
+  <section id="hero" class="hero">
+    <div class="container hero-content">
+      <span class="hero-subtitle">Еногастрономічне мистецтво</span>
+      <h1 class="hero-title">
+        Симфонія смаку: <br>
+        <span id="typed-somelia" class="typed-highlight"></span>
+      </h1>
+      <p class="hero-desc">
+        Інтерактивний каталог та гід з поєднання крафтових сирів і витриманих вин. 
+        Відкрийте унікальні терруари та знайдіть свою ідеальну гастрономічну пару.
+      </p>
+      <a href="#matcher" class="btn btn-primary">Підібрати гастропару ✨</a>
+    </div>
+  </section>
+
+  <!-- ІНТЕРАКТИВНИЙ КАЛЬКУЛЯТОР ПОЄДНАНЬ -->
+  <section id="matcher" class="section matcher-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Підбір гастрономічної пари</h2>
+        <p class="section-subtitle">Оберіть категорію сиру та вина для отримання рекомендації сомельє</p>
+      </div>
+
+      <div class="matcher-card">
+        <div class="selector-group">
+          <label for="cheeseSelect">🧀 Категорія сиру:</label>
+          <select id="cheeseSelect" class="form-select">
+            <option value="all">Усі категорії</option>
+            <option value="soft">М’які з білою пліснявою (Брі, Камамбер)</option>
+            <option value="hard">Тверді та витримані (Пармезан, Гауда)</option>
+            <option value="blue">Блакитні пікантні (Горгонзола, Рокфор)</option>
+            <option value="goat">Свіжі козячі (Шевр, Кротен)</option>
+          </select>
+        </div>
+
+        <div class="selector-group">
+          <label for="wineSelect">🍷 Категорія вина:</label>
+          <select id="wineSelect" class="form-select">
+            <option value="all">Усі види вин</option>
+            <option value="red">Червоне сухе</option>
+            <option value="white">Біле сухе</option>
+            <option value="sparkling">Ігристе (Брют, Просекко)</option>
+            <option value="dessert">Десертне / Кріплене (Порто)</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="pairingResults" class="cards-grid">
+        <!-- Картки генеруються через JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- FANCYBOX V5 ГАЛЕРЕЯ: ВИННИЙ ЛЬОХ -->
+  <section id="gallery" class="section gallery-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Галерея винного льоху та сироварні</h2>
+        <p class="section-subtitle">Клікніть на фото для перегляду у високій якості через Fancybox v5</p>
+      </div>
+
+      <div class="gallery-grid">
+        <a href="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=1600&auto=format&fit=crop" 
+           data-fancybox="somelia-gallery" 
+           data-caption="Колекційні дубові діжки з витриманим кріпленим портвейном" 
+           class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=600&auto=format&fit=crop" alt="Діжки" />
+          <div class="gallery-overlay"><span>🔍 Наблизити фото</span></div>
+        </a>
+
+        <a href="https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=1600&auto=format&fit=crop" 
+           data-fancybox="somelia-gallery" 
+           data-caption="Камера афінажу: дозрівання твердих крафтових сирів Пармезан та Ґрюєр" 
+           class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=600&auto=format&fit=crop" alt="Сири" />
+          <div class="gallery-overlay"><span>🔍 Афінаж сирів</span></div>
+        </a>
+
+        <a href="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?w=1600&auto=format&fit=crop" 
+           data-fancybox="somelia-gallery" 
+           data-caption="Декантація та подача тосканського сухого Chianti Classico" 
+           class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?w=600&auto=format&fit=crop" alt="Вино" />
+          <div class="gallery-overlay"><span>🔍 Подача вина</span></div>
+        </a>
+
+        <a href="https://images.unsplash.com/photo-1452195100486-9cc805987862?w=1600&auto=format&fit=crop" 
+           data-fancybox="somelia-gallery" 
+           data-caption="Плато французьких м'яких сирів Брі де Мо та Камамбер" 
+           class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1452195100486-9cc805987862?w=600&auto=format&fit=crop" alt="Сирне плато" />
+          <div class="gallery-overlay"><span>🔍 Сирне плато</span></div>
+        </a>
+
+        <a href="https://images.unsplash.com/photo-1528823872057-9c018a7a7553?w=1600&auto=format&fit=crop" 
+           data-fancybox="somelia-gallery" 
+           data-caption="Збір винограду сорту Шардоне на схилах Долини Луари" 
+           class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1528823872057-9c018a7a7553?w=600&auto=format&fit=crop" alt="Виноградники" />
+          <div class="gallery-overlay"><span>🔍 Виноградники</span></div>
+        </a>
+
+        <a href="https://images.unsplash.com/photo-1568213816046-0ee1c42bd559?w=1600&auto=format&fit=crop" 
+           data-fancybox="somelia-gallery" 
+           data-caption="Дегустаційний зал ресторану Somelia для майстер-класів" 
+           class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1568213816046-0ee1c42bd559?w=600&auto=format&fit=crop" alt="Дегустаційний зал" />
+          <div class="gallery-overlay"><span>🔍 Дегустаційний зал</span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SWIPER.JS V11 СЛАЙДЕР ВІДГУКІВ -->
+  <section id="reviews" class="section reviews-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Відгуки професійних сомельє</h2>
+        <p class="section-subtitle">Сенсорна карусель відгуків (Swiper v11, автоплей, пауза при наведенні)</p>
+      </div>
+
+      <div class="swiper reviews-swiper">
+        <div class="swiper-wrapper">
+          
+          <div class="swiper-slide">
+            <div class="review-card">
+              <div class="stars">★★★★★</div>
+              <p class="review-text">«Гармонія між пікантною Горгонзолою та витриманим Портвейном перевершила всі сподівання! Точний розрахунок балансу солі та солодощів.»</p>
+              <div class="reviewer">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=120&auto=format&fit=crop" class="avatar" alt="Олена" />
+                <div>
+                  <h4 class="name">Олена Демченко</h4>
+                  <p class="role">Шеф-сомельє ресторану «Terroir»</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="review-card">
+              <div class="stars">★★★★★</div>
+              <p class="review-text">«Рекомендація поєднати Брі де Мо з класичним Брютом — чистий підручник еногастрономії. Бульбашки ідеально очищують кремову скоринку!»</p>
+              <div class="reviewer">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&auto=format&fit=crop" class="avatar" alt="Марко" />
+                <div>
+                  <h4 class="name">Марко Россі</h4>
+                  <p class="role">Експерт з вин Північної Італії</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="review-card">
+              <div class="stars">★★★★★</div>
+              <p class="review-text">«Парміджано 36 місяців з К'янті Класіко — вічна класика. Зернистий білок пом'якшує сухі таніни Санджовезе. Браво Somelia за такий гід!»</p>
+              <div class="reviewer">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=120&auto=format&fit=crop" class="avatar" alt="Вікторія" />
+                <div>
+                  <h4 class="name">Вікторія Кравчук</h4>
+                  <p class="role">Крафтова сироварка, засновник бренду</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="review-card">
+              <div class="stars">★★★★★</div>
+              <p class="review-text">«Трав'янистий козячий кротен та Совіньйон Блан із Сансеру — неперевершений дует. Ароматика збігається на всі 100%.»</p>
+              <div class="reviewer">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=120&auto=format&fit=crop" class="avatar" alt="Жан-Поль" />
+                <div>
+                  <h4 class="name">Жан-Поль Моро</h4>
+                  <p class="role">Енолог та викладач винної школи</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="review-card">
+              <div class="stars">★★★★★</div>
+              <p class="review-text">«Витримана Гауда 18 місяців з Каберне Совіньйон створили неймовірний карамельно-ягідний шлейф. Справжнє свято для рецепторів.»</p>
+              <div class="reviewer">
+                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=120&auto=format&fit=crop" class="avatar" alt="Софія" />
+                <div>
+                  <h4 class="name">Софія Вербицька</h4>
+                  <p class="role">Гастрономічний критик</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ФУТЕР -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>© 2026 Somelia Craft Project. Створено в рамках лабораторної роботи.</p>
+      <p>Розробниця: <a href="https://github.com/rusincuk" target="_blank">Юлія Русінчук (rusincuk)</a></p>
+    </div>
+  </footer>
+
+  <!-- CDN СКРИПТИ (Vanilla JS) -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+  <!-- ВЛАСНИЙ СКРИПТ -->
+  <script src="app.js"></script>
+</body>
+</html>
