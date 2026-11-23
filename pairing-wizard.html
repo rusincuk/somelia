@@ -1,0 +1,482 @@
+﻿<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Майстер підбору ідеальної гастрономічної пари SOMELIA. Підбір крафтового українського сиру та вина за смаковим профілем та Match Score.">
+  <title>SOMELIA — Майстер підбору пари | Інтерактивний підбір сиру та вина</title>
+
+  <!-- Favicon & Canonical (SEO & Lighthouse Audit) -->
+  <link rel="icon" type="image/png" href="assets/images/somelia_sheep_icon.png">
+  <link rel="canonical" href="https://rusincuk.github.io/somelia/pairing-wizard.html">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="SOMELIA — Майстер підбору пари | Інтерактивний підбір сиру та вина">
+  <meta property="og:description" content="Майстер підбору ідеальної гастрономічної пари SOMELIA. Підбір крафтового українського сиру та вина за смаковим профілем та Match Score.">
+  <meta property="og:image" content="https://rusincuk.github.io/somelia/assets/images/hero_wine_cheese.webp">
+  <meta property="og:url" content="https://rusincuk.github.io/somelia/pairing-wizard.html">
+  <meta name="theme-color" content="#27382F">
+
+  <!-- Google Fonts: Playfair Display & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN v3 -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            somelia: {
+              cream: '#FAF7F2',
+              'cream-surface': '#F4EFE6',
+              'cream-card': '#FFFFFF',
+              dark: '#1A1715',
+              'dark-surface': '#24201D',
+              forest: '#27382F',
+              'forest-card': '#314439',
+              bordeaux: '#3D1B22',
+              'primary-dark': '#203127',
+              'primary-hover': '#16241C',
+              gold: '#EBD59B',
+              'gold-hover': '#DFCA8F',
+              'gold-text': '#8A6D25',
+              border: '#E5DFD5'
+            }
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"Inter"', 'system-ui', '-apple-system', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ================= SITE HEADER ================= -->
+  <header class="site-header" role="banner">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo" aria-label="SOMELIA — На головну">
+        <img src="assets/images/somelia_sheep_icon.png" alt="SOMELIA Логотип" class="logo-icon" width="38" height="38">
+        <span class="logo-text">SOMELIA</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="main-nav" aria-label="Головна навігація сайту">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="index.html" class="nav-link">Головна</a></li>
+          <li class="nav-item"><a href="cheese-catalog.html" class="nav-link">Каталог сирів</a></li>
+          <li class="nav-item"><a href="wine-catalog.html" class="nav-link">Каталог вин</a></li>
+          <li class="nav-item"><a href="pairing-wizard.html" class="nav-link active">Підбір пари</a></li>
+          <li class="nav-item"><a href="favorites.html" class="nav-link">Обрані пари</a></li>
+          <li class="nav-item dropdown">
+            <a href="pairing-wizard.html" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+              Каталоги <span class="chevron-icon">▾</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="cheese-catalog.html">Каталог сирів</a></li>
+              <li><a href="wine-catalog.html">Каталог вин</a></li>
+              <li><a href="product-card.html">Картка сиру</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a href="contacts.html" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+              Більше <span class="chevron-icon">▾</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="contacts.html">Про нас та контакти</a></li>
+              <li><a href="pairing-result.html">Демо результату</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <a href="contacts.html" class="login-link">Увійти</a>
+        <a href="pairing-wizard.html" class="btn btn-primary-dark">Почати</a>
+        <button class="mobile-menu-btn" id="mobileMenuToggle" onclick="toggleSomeliaMenu(event)" aria-label="Відкрити головне меню" aria-expanded="false">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Navigation -->
+    <div id="mobileMenu" class="mobile-nav-drawer" style="display:none;">
+      <nav class="mobile-nav-links">
+        <a href="index.html">Головна</a>
+        <a href="cheese-catalog.html">Каталог сирів</a>
+        <a href="wine-catalog.html">Каталог вин</a>
+        <a href="pairing-wizard.html">Підбір пари</a>
+        <a href="favorites.html">Обрані пари</a>
+        <a href="contacts.html">Про нас та контакти</a>
+      </nav>
+      <div class="mobile-nav-actions">
+        <a href="contacts.html" class="mobile-btn-outline">Увійти в кабінет</a>
+        <a href="pairing-wizard.html" class="mobile-btn-primary">Почати підбір пари</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= BREADCRUMBS ================= -->
+  <nav class="breadcrumbs-nav" aria-label="Шлях сторінками">
+    <div class="container">
+      <ol class="breadcrumbs-list">
+        <li><a href="index.html">Головна</a></li>
+        <li class="breadcrumbs-sep">/</li>
+        <li class="breadcrumbs-current" aria-current="page">Майстер підбору</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- ================= MAIN CONTENT ================= -->
+  <main id="main-content">
+
+    <section class="page-header-banner">
+      <div class="container">
+        <span class="section-eyebrow">ІНТЕРАКТИВНИЙ МАЙСТЕР</span>
+        <h1 class="page-header-title">Твій шлях до ідеальної пари</h1>
+        <p class="page-header-subtitle">Майстер підбору ставить прості запитання про смак, текстуру, регіон і витримку. Алгоритм перетворює твої відповіді на точний Match Score.</p>
+      </div>
+    </section>
+
+    <!-- WIZARD FORM -->
+    <section class="wizard-section">
+      <div class="container">
+        <div class="wizard-card">
+          <form action="pairing-result.html" method="GET">
+            
+            <!-- Step 1 -->
+            <div class="wizard-step-block">
+              <div class="wizard-step-header">
+                <span class="wizard-step-num">1</span>
+                <h2 class="wizard-step-title">З чого починаємо?</h2>
+              </div>
+              <div class="wizard-choice-grid">
+                <label class="wizard-choice-card selected">
+                  <input type="radio" name="start_mode" value="cheese" checked style="position:absolute;opacity:0;">
+                  <div class="wizard-choice-icon">🧀</div>
+                  <div class="wizard-choice-name">У мене є сир</div>
+                  <div class="wizard-choice-hint">Оберіть сир з каталогу, і ми знайдемо вино, що розкриє його характер.</div>
+                </label>
+
+                <label class="wizard-choice-card">
+                  <input type="radio" name="start_mode" value="wine" style="position:absolute;opacity:0;">
+                  <div class="wizard-choice-icon">🍷</div>
+                  <div class="wizard-choice-name">У мене є вино</div>
+                  <div class="wizard-choice-hint">Вкажіть пляшку, і ми підберемо сир, який підкреслить кожну ноту.</div>
+                </label>
+
+                <label class="wizard-choice-card">
+                  <input type="radio" name="start_mode" value="free" style="position:absolute;opacity:0;">
+                  <div class="wizard-choice-icon">✨</div>
+                  <div class="wizard-choice-name">Повна свобода</div>
+                  <div class="wizard-choice-hint">Пройдіть короткий тест, і ми створимо гармонійну пару під ваш смак.</div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="wizard-step-block">
+              <div class="wizard-step-header">
+                <span class="wizard-step-num">2</span>
+                <h2 class="wizard-step-title">Оберіть профіль смаку</h2>
+              </div>
+              <div class="filter-pill-options" style="margin-bottom: var(--spacing-lg);">
+                <button type="button" class="btn-filter-pill active">Горіховий</button>
+                <button type="button" class="btn-filter-pill active">Пряний</button>
+                <button type="button" class="btn-filter-pill">Вершковий</button>
+                <button type="button" class="btn-filter-pill">Фруктовий</button>
+                <button type="button" class="btn-filter-pill">Землистий</button>
+                <button type="button" class="btn-filter-pill">Мінеральний</button>
+              </div>
+
+              <div class="range-slider-wrap">
+                <label class="form-label">Інтенсивність смаку:</label>
+                <input type="range" min="1" max="5" value="4" style="width:100%; accent-color: var(--color-primary-dark);">
+                <div class="slider-labels">
+                  <span>Делікатний</span>
+                  <span>Збалансований</span>
+                  <span>Насичений</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="wizard-step-block">
+              <div class="wizard-step-header">
+                <span class="wizard-step-num">3</span>
+                <h2 class="wizard-step-title">Бажаний регіон та нагода</h2>
+              </div>
+              <div class="filter-pill-options">
+                <button type="button" class="btn-filter-pill active">Карпати</button>
+                <button type="button" class="btn-filter-pill">Закарпаття</button>
+                <button type="button" class="btn-filter-pill">Полтавщина</button>
+                <button type="button" class="btn-filter-pill">Одещина</button>
+                <button type="button" class="btn-filter-pill">Будь-який український терруар</button>
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="wizard-actions">
+              <a href="pairing-result.html" class="btn btn-gold" style="font-size: 1.1rem; padding: 14px 42px;">Розрахувати ідеальну пару (Match Score) →</a>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-top: 10px;">Жодної магії. Лише чесний алгоритм, що розуміє смак.</p>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 2. ІНТЕРАКТИВНИЙ ВІДЖЕТ: КАЛЬКУЛЯТОР ДЕГУСТАЦІЙНОГО СЕТУ SOMELIA (ЛР №11) ================= -->
+    <section id="tasting-calculator" class="py-16 sm:py-20 bg-[#FAF7F2] border-t border-stone-200/80" aria-labelledby="calc-widget-title">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Header -->
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <span class="inline-block px-3.5 py-1 rounded-full text-xs font-semibold bg-amber-100 text-amber-900 border border-amber-200 mb-3">
+            Лабораторна робота №11 • Інтерактивний віджет &amp; Defensive QA
+          </span>
+          <h2 id="calc-widget-title" class="font-serif font-bold text-3xl sm:text-4xl text-[#203127] mb-3">
+            Калькулятор дегустаційного сету
+          </h2>
+          <p class="text-sm sm:text-base text-stone-600 leading-relaxed">
+            Розрахуйте бюджет, вагу сирів та кількість пляшок вина для вашої події у реальному часі. Система захищена від некоректного введення даних.
+          </p>
+        </div>
+
+        <!-- Calculator Card -->
+        <div class="bg-white rounded-3xl border border-stone-200 shadow-xl overflow-hidden">
+          <div class="grid grid-cols-1 lg:grid-cols-12">
+            
+            <!-- Left Panel: Parameters (7 cols) -->
+            <div class="lg:col-span-7 p-6 sm:p-8 lg:p-10 space-y-6">
+              
+              <!-- Параметр 1: Кількість гостей (Input Number) -->
+              <div>
+                <div class="flex items-center justify-between mb-2">
+                  <label for="guests-count" class="text-sm font-bold text-stone-800 flex items-center gap-1.5">
+                    <span>1. Кількість гостей</span>
+                    <span class="text-red-500" aria-hidden="true">*</span>
+                  </label>
+                  <span class="text-xs text-stone-500 font-mono">діапазон: 1–50 осіб</span>
+                </div>
+                <div class="relative">
+                  <input 
+                    type="number" 
+                    id="guests-count" 
+                    name="guests-count" 
+                    min="1" 
+                    max="50" 
+                    value="4" 
+                    step="1"
+                    class="w-full px-4 py-3 rounded-xl border border-stone-300 bg-white text-stone-900 text-base font-semibold focus:outline-none focus:ring-2 focus:ring-amber-600 focus:border-amber-600 transition-all shadow-sm"
+                    placeholder="Введіть число гостей (наприклад: 4)"
+                    aria-describedby="guests-error"
+                    aria-invalid="false"
+                  >
+                  <span class="absolute right-4 top-1/2 -translate-y-1/2 text-stone-400 text-sm pointer-events-none font-medium">осіб</span>
+                </div>
+                <!-- Error Message Area -->
+                <p id="guests-error" class="hidden text-xs font-semibold text-red-600 mt-2 flex items-center gap-1.5" role="alert"></p>
+              </div>
+
+              <!-- Параметр 2: Рівень дегустаційного сету (Select) -->
+              <div>
+                <label for="tasting-format" class="block text-sm font-bold text-stone-800 mb-2">
+                  2. Рівень дегустаційного сету
+                </label>
+                <select 
+                  id="tasting-format" 
+                  name="tasting-format" 
+                  class="w-full px-4 py-3 rounded-xl border border-stone-300 bg-white text-stone-900 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-amber-600 focus:border-amber-600 transition-all shadow-sm"
+                >
+                  <option value="350">Класичний сет (3 крафтові сири + молоде сухе вино) — 350 грн / ос.</option>
+                  <option value="590" selected>Преміум витриманий (5 авторських сирів + вино Reserve) — 590 грн / ос.</option>
+                  <option value="890">Гран Резерв (7 елітних сирів афінажу + колекційне вино) — 890 грн / ос.</option>
+                </select>
+                <p class="text-xs text-stone-500 mt-1.5">Включає подачу з горіхами, виноградом, свіжим хлібом та медом.</p>
+              </div>
+
+              <!-- Параметр 3, 4, 5: Додаткові послуги та опції (Checkboxes) -->
+              <div>
+                <span class="block text-sm font-bold text-stone-800 mb-2.5">
+                  3. Додаткові опції та супровід
+                </span>
+                <div class="space-y-3">
+                  
+                  <label class="flex items-start gap-3.5 p-3.5 rounded-xl border border-stone-200 hover:bg-stone-50/80 cursor-pointer transition-colors group">
+                    <input 
+                      type="checkbox" 
+                      id="opt-sommelier" 
+                      name="opt-sommelier" 
+                      class="mt-0.5 w-5 h-5 rounded border-stone-300 text-amber-600 focus:ring-amber-600 cursor-pointer"
+                    >
+                    <div class="flex-grow flex items-center justify-between text-sm">
+                      <span class="text-stone-800 font-medium group-hover:text-stone-900">Послуги сертифікованого сомельє на 2 години</span>
+                      <span class="text-xs font-bold text-[#203127] bg-stone-100 px-2 py-1 rounded-md">+1 500 грн</span>
+                    </div>
+                  </label>
+
+                  <label class="flex items-start gap-3.5 p-3.5 rounded-xl border border-stone-200 hover:bg-stone-50/80 cursor-pointer transition-colors group">
+                    <input 
+                      type="checkbox" 
+                      id="opt-oak-box" 
+                      name="opt-oak-box" 
+                      class="mt-0.5 w-5 h-5 rounded border-stone-300 text-amber-600 focus:ring-amber-600 cursor-pointer"
+                    >
+                    <div class="flex-grow flex items-center justify-between text-sm">
+                      <span class="text-stone-800 font-medium group-hover:text-stone-900">Подарунковий дубовий бокс для подачі та ніж для сиру</span>
+                      <span class="text-xs font-bold text-[#203127] bg-stone-100 px-2 py-1 rounded-md">+600 грн</span>
+                    </div>
+                  </label>
+
+                  <label class="flex items-start gap-3.5 p-3.5 rounded-xl border border-stone-200 hover:bg-stone-50/80 cursor-pointer transition-colors group">
+                    <input 
+                      type="checkbox" 
+                      id="opt-delivery" 
+                      name="opt-delivery" 
+                      class="mt-0.5 w-5 h-5 rounded border-stone-300 text-amber-600 focus:ring-amber-600 cursor-pointer"
+                    >
+                    <div class="flex-grow flex items-center justify-between text-sm">
+                      <span class="text-stone-800 font-medium group-hover:text-stone-900">Експрес-доставка у термобоксі (гарантія свіжості)</span>
+                      <span class="text-xs font-bold text-[#203127] bg-stone-100 px-2 py-1 rounded-md">+250 грн</span>
+                    </div>
+                  </label>
+
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Right Panel: Live Calculation Result (5 cols) -->
+            <div class="lg:col-span-5 bg-gradient-to-b from-[#203127] to-[#16241C] text-white p-6 sm:p-8 lg:p-10 flex flex-col justify-between">
+              <div>
+                <span class="text-xs font-bold tracking-widest uppercase text-[#EBD59B] mb-2 block">ПІДСУМОК РОЗРАХУНКУ</span>
+                <h3 class="font-serif font-bold text-2xl text-white mb-6">Вартість дегустації</h3>
+
+                <!-- Total Price Display -->
+                <div class="bg-white/10 rounded-2xl p-5 backdrop-blur-sm border border-white/15 mb-6">
+                  <div class="text-xs text-stone-300 mb-1">Орієнтовна загальна вартість:</div>
+                  <div class="flex items-baseline gap-2">
+                    <span id="total-price" class="text-4xl sm:text-5xl font-serif font-bold text-[#EBD59B]">2 360</span>
+                    <span class="text-xl font-medium text-stone-200">грн</span>
+                  </div>
+                  <div class="text-xs text-[#EBD59B]/90 mt-2 font-mono">
+                    <span id="per-guest-price">590</span> грн / на одного гостя
+                  </div>
+                </div>
+
+                <!-- Product Estimates (Norms) -->
+                <div class="space-y-3.5 text-xs sm:text-sm text-stone-200 border-t border-white/15 pt-5 mb-6">
+                  <div class="flex justify-between items-center">
+                    <span class="text-stone-300 flex items-center gap-1.5">🧀 Загальна вага сирів:</span>
+                    <span id="calc-cheese-weight" class="font-bold text-white">600 г (150 г/ос.)</span>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <span class="text-stone-300 flex items-center gap-1.5">🍷 Кількість вина:</span>
+                    <span id="calc-wine-bottles" class="font-bold text-white">2 пляшки (0.5 пл./ос.)</span>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <span class="text-stone-300 flex items-center gap-1.5">⏱️ Час підготовки сету:</span>
+                    <span class="font-bold text-white">до 3 годин</span>
+                  </div>
+                </div>
+
+                <!-- Defensive QA Badge -->
+                <div class="bg-black/25 rounded-xl p-3 text-[11px] text-stone-300 flex items-center gap-2 border border-white/10">
+                  <span class="text-emerald-400 font-bold">🛡️ Defensive QA:</span>
+                  <span>Автоперевірка NaN, Infinity, меж 1–50 та дробових чисел.</span>
+                </div>
+              </div>
+
+              <!-- Action Button -->
+              <div class="pt-6">
+                <button 
+                  type="button" 
+                  id="order-tasting-btn" 
+                  class="w-full py-3.5 px-6 rounded-xl bg-[#EBD59B] hover:bg-[#DFCA8F] text-[#203127] font-bold text-sm sm:text-base shadow-lg hover:shadow-xl transition-all duration-200 active:scale-98 focus:outline-none focus:ring-4 focus:ring-amber-300 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
+                >
+                  Замовити дегустаційний сет →
+                </button>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= SITE FOOTER ================= -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-container">
+      <div class="footer-top-grid">
+        <div class="footer-col brand-col">
+          <div class="footer-brand">
+            <img src="assets/images/somelia_sheep_icon.png" alt="SOMELIA" class="footer-logo-img" width="34" height="34">
+            <span class="footer-brand-title">SOMELIA</span>
+          </div>
+          <p class="footer-tagline">Платформа гастрономічної культури, що об'єднує поціновувачів крафтового українського сиру та шляхетного вина.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Навігація</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Головна</a></li>
+            <li><a href="cheese-catalog.html">Каталог сирів</a></li>
+            <li><a href="wine-catalog.html">Каталог вин</a></li>
+            <li><a href="pairing-wizard.html">Майстер підбору</a></li>
+            <li><a href="favorites.html">Обрані пари</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Терруари</h4>
+          <ul class="footer-links">
+            <li><a href="cheese-catalog.html">Карпати &amp; Полонини</a></li>
+            <li><a href="cheese-catalog.html">Закарпаття</a></li>
+            <li><a href="cheese-catalog.html">Полтавщина</a></li>
+            <li><a href="wine-catalog.html">Одещина</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Контакти</h4>
+          <p class="footer-contact-item">Київ, вул. Смаку, 12</p>
+          <p class="footer-contact-item">hello@somelia.ua</p>
+          <div class="footer-socials">
+            <a href="contacts.html">Про нас</a>
+            <a href="contacts.html">Зворотний зв'язок</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <p class="copyright">© 2026 SOMELIA. Усі права захищено. Лабораторна робота №5.</p>
+        <p class="made-with">Розроблено за Figma-прототипом (багатосторінкова верстка на чистому HTML5 / CSS3)</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Universal Mobile Navigation & Interactive Calculator Widget Scripts -->
+  <script src="js/mobile-nav.js" defer></script>
+  <script src="js/widget.js" defer></script>
+</body>
+</html>
+

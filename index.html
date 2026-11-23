@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="uk" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="description" content="SOMELIA — інтерактивний гастрономічний хаб та культура поєднання українського крафтового сиру та вина. Відео-тури, інтерактивна карта та підбір пар.">
+  <meta name="keywords" content="Somelia, крафтовий сир, виноробство України, підбір сиру та вина, дегустаційний зал Київ, гастротуризм, Google Maps, YouTube">
+  <title>SOMELIA — Інтерактивний хаб крафтових сирів та вин | Головна</title>
+
+  <!-- Favicon & Canonical (SEO & Lighthouse Audit) -->
+  <link rel="icon" type="image/png" href="assets/images/somelia_sheep_icon.png">
+  <link rel="canonical" href="https://rusincuk.github.io/somelia/">
+
+  <!-- Open Graph / Facebook / Viber / Telegram -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="SOMELIA — Інтерактивний хаб крафтових сирів та вин | Головна">
+  <meta property="og:description" content="Автентичні українські крафтові сири, локальні вина, дегустаційні сети та інтерактивний майстер поєднань.">
+  <meta property="og:image" content="https://rusincuk.github.io/somelia/assets/images/hero_wine_cheese.webp">
+  <meta property="og:url" content="https://rusincuk.github.io/somelia/">
+  <meta name="theme-color" content="#27382F">
+
+  <!-- Google Fonts: Playfair Display (Serif) & Inter (Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- 1. CDN СТИЛІ ПЛАГІНІВ (Swiper.js v11 & Fancybox v5) • ЛР №10 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+
+  <!-- Tailwind CSS CDN v3 -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            somelia: {
+              cream: '#FAF7F2',
+              'cream-surface': '#F4EFE6',
+              'cream-card': '#FFFFFF',
+              dark: '#1A1715',
+              'dark-surface': '#24201D',
+              forest: '#27382F',
+              'forest-card': '#314439',
+              bordeaux: '#3D1B22',
+              'primary-dark': '#203127',
+              'primary-hover': '#16241C',
+              gold: '#EBD59B',
+              'gold-hover': '#DFCA8F',
+              'gold-text': '#8A6D25',
+              border: '#E5DFD5'
+            }
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"Inter"', 'system-ui', '-apple-system', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Stylesheet for fine-grained typography, CSS Variables (:root) & Multimedia Aspect-Ratio -->
+  <link rel="stylesheet" href="custom-styles.css">
+</head>
+<body class="bg-[#FAF7F2] text-[#212121] font-sans antialiased flex flex-col min-h-screen selection:bg-[#EBD59B] selection:text-[#26241E]">
+
+  <!-- ================= SITE HEADER ================= -->
+  <header class="sticky top-0 z-50 bg-[#FAF7F2]/95 backdrop-blur-md border-b border-stone-200/70 transition-all duration-300" role="banner">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Brand Logo -->
+        <a href="index.html" class="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#203127] rounded-lg p-1" aria-label="SOMELIA — На головну сторінку">
+          <img src="assets/images/somelia_sheep_icon.png" alt="SOMELIA Логотип" width="38" height="38" class="w-[38px] h-[38px] object-contain group-hover:scale-105 transition-transform duration-200">
+          <span class="font-serif font-bold text-2xl tracking-wider text-[#203127]">SOMELIA</span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center gap-1 lg:gap-5 text-sm font-medium" aria-label="Головна навігація сайту">
+          <a href="index.html" class="px-3 py-2 text-[#203127] font-semibold border-b-2 border-[#203127] transition-colors" aria-current="page">Головна</a>
+          <a href="#how-it-works" class="px-3 py-2 text-stone-700 hover:text-[#203127] transition-colors">Як це працює</a>
+          <a href="#dobirka" class="px-3 py-2 text-stone-700 hover:text-[#203127] transition-colors">Добірка пар</a>
+          <a href="#media-hub" class="px-3 py-2 text-stone-700 hover:text-[#203127] transition-colors">Медіа-хаб</a>
+          <a href="#contacts" class="px-3 py-2 text-stone-700 hover:text-[#203127] transition-colors">Локація &amp; Карта</a>
+
+          <!-- Dropdown: Каталоги -->
+          <div class="relative group">
+            <button type="button" class="px-3 py-2 text-stone-700 hover:text-[#203127] flex items-center gap-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#203127] rounded-lg" aria-haspopup="true" aria-expanded="false" aria-label="Меню каталогів сирів та вин">
+              <span>Каталоги</span>
+              <svg class="w-3.5 h-3.5 text-stone-500 group-hover:text-[#203127] transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="absolute left-0 mt-2 w-48 rounded-xl shadow-xl bg-white border border-stone-200 py-2 hidden group-hover:block hover:block z-50">
+              <a href="cheese-catalog.html" class="block px-4 py-2 text-xs text-stone-700 hover:bg-[#FAF7F2] hover:text-[#203127]">Каталог сирів</a>
+              <a href="wine-catalog.html" class="block px-4 py-2 text-xs text-stone-700 hover:bg-[#FAF7F2] hover:text-[#203127]">Каталог вин</a>
+              <a href="product-card.html" class="block px-4 py-2 text-xs text-stone-700 hover:bg-[#FAF7F2] hover:text-[#203127]">Картка сиру</a>
+            </div>
+          </div>
+        </nav>
+
+        <!-- Header Actions -->
+        <div class="hidden md:flex items-center gap-4">
+          <a href="contacts.html" class="text-sm font-semibold text-stone-700 hover:text-stone-900 transition-colors focus-visible:ring-2 focus-visible:ring-[#203127] rounded-lg px-2 py-1">Контакти</a>
+          <a href="pairing-wizard.html" class="inline-flex items-center justify-center bg-[#203127] hover:bg-[#16241C] text-white text-sm font-semibold px-6 py-2.5 rounded-full transition-all duration-200 shadow-sm hover:shadow-md active:scale-95 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#203127]">
+            Почати підбір
+          </a>
+        </div>
+
+        <!-- Mobile Hamburger Button -->
+        <div class="flex items-center md:hidden">
+          <button type="button" id="mobileMenuToggle" onclick="toggleSomeliaMenu(event)" class="p-2.5 rounded-xl text-stone-800 hover:text-stone-950 hover:bg-stone-200/60 active:bg-stone-300/80 transition-colors focus:outline-none focus:ring-2 focus:ring-[#203127] min-h-[48px] min-w-[48px] flex items-center justify-center cursor-pointer select-none touch-manipulation z-50 relative" aria-controls="mobileMenu" aria-expanded="false" aria-label="Відкрити головне меню навігації">
+            <svg id="hamburgerIcon" class="w-7 h-7 block pointer-events-none transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+            <svg id="closeIcon" class="w-7 h-7 hidden pointer-events-none transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Navigation (Clean, without any technical badges) -->
+    <div id="mobileMenu" class="hidden md:hidden bg-[#FAF7F2] border-b border-stone-200/90 shadow-2xl px-5 pt-3 pb-6 space-y-3 transition-all duration-300 ease-in-out max-h-[calc(100vh-80px)] overflow-y-auto">
+      <nav class="flex flex-col space-y-1.5 text-base font-medium" aria-label="Мобільна навігація">
+        <a href="index.html" class="px-4 py-3 rounded-xl font-semibold text-[#203127] bg-[#F4EFE6] flex items-center justify-between">
+          <span>Головна</span>
+          <span class="text-xs text-[#203127]">●</span>
+        </a>
+        <a href="#how-it-works" class="px-4 py-3 rounded-xl text-stone-800 hover:bg-[#F4EFE6] hover:text-[#203127] transition-colors flex items-center justify-between">
+          <span>Як це працює</span>
+          <span class="text-stone-400">›</span>
+        </a>
+        <a href="#dobirka" class="px-4 py-3 rounded-xl text-stone-800 hover:bg-[#F4EFE6] hover:text-[#203127] transition-colors flex items-center justify-between">
+          <span>Добірка пар</span>
+          <span class="text-stone-400">›</span>
+        </a>
+        <a href="#media-hub" class="px-4 py-3 rounded-xl text-stone-800 hover:bg-[#F4EFE6] hover:text-[#203127] transition-colors flex items-center justify-between">
+          <span>Медіа-хаб</span>
+          <span class="text-stone-400">›</span>
+        </a>
+        <a href="#contacts" class="px-4 py-3 rounded-xl text-stone-800 hover:bg-[#F4EFE6] hover:text-[#203127] transition-colors flex items-center justify-between">
+          <span>Локація та дегустації</span>
+          <span class="text-stone-400">›</span>
+        </a>
+        <a href="cheese-catalog.html" class="px-4 py-3 rounded-xl text-stone-800 hover:bg-[#F4EFE6] hover:text-[#203127] transition-colors flex items-center justify-between">
+          <span>Каталог сирів</span>
+          <span class="text-stone-400">›</span>
+        </a>
+        <a href="wine-catalog.html" class="px-4 py-3 rounded-xl text-stone-800 hover:bg-[#F4EFE6] hover:text-[#203127] transition-colors flex items-center justify-between">
+          <span>Каталог вин</span>
+          <span class="text-stone-400">›</span>
+        </a>
+        <a href="pairing-wizard.html" class="px-4 py-3 rounded-xl text-stone-800 hover:bg-[#F4EFE6] hover:text-[#203127] transition-colors flex items-center justify-between">
+          <span>Підбір пари</span>
+          <span class="text-stone-400">›</span>
+        </a>
+      </nav>
+      <div class="pt-4 mt-2 border-t border-stone-200 flex flex-col gap-2.5">
+        <a href="contacts.html" class="w-full text-center py-3 text-sm font-semibold text-stone-800 bg-white border border-stone-300 rounded-full shadow-sm hover:bg-stone-50 active:scale-98 transition-all">Про нас та зворотний зв'язок</a>
+        <a href="pairing-wizard.html" class="w-full text-center py-3 text-sm font-semibold text-white bg-[#203127] hover:bg-[#16241C] active:scale-98 rounded-full shadow-md transition-all">Почати підбір пари</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= MAIN CONTENT ================= -->
+  <main id="main-content" class="flex-grow">
+
+    <!-- 1. HERO SECTION: «Смак, який об'єднує» (Єдиний H1 на сторінці) -->
+    <section class="relative min-h-[560px] lg:min-h-[640px] flex items-center bg-stone-950 text-white overflow-hidden" aria-labelledby="hero-title">
+      <!-- Background Image (Responsive WebP with fast JPG fallback) -->
+      <picture class="absolute inset-0 w-full h-full">
+        <source srcset="assets/images/hero_wine_cheese.webp" type="image/webp">
+        <img src="assets/images/hero_wine_cheese.jpg" alt="Шляхетне вино та крафтовий сир SOMELIA на дубовій дошці" class="w-full h-full object-cover object-center filter brightness-90" width="1920" height="1080" fetchpriority="high" decoding="async">
+      </picture>
+      <!-- Gradient Overlay for WCAG 2.2 contrast compliance -->
+      <div class="absolute inset-0 bg-gradient-to-r from-stone-950/90 via-stone-950/70 to-transparent"></div>
+
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
+        <div class="max-w-xl">
+          <h1 id="hero-title" class="font-serif font-bold text-4xl sm:text-5xl lg:text-6xl text-white leading-tight mb-6">
+            Симфонія смаку:<br>
+            <span id="typed-somelia" class="text-[#EBD59B] border-b-2 border-dashed border-[#8A6D25]/70"></span>
+          </h1>
+          <p class="text-base sm:text-lg text-stone-200 leading-relaxed mb-8 max-w-lg">
+            Вишукані поєднання сирів і вин для моментів, які хочеться смакувати. Відкрийте багатство локальних українських теруарів та сироварень.
+          </p>
+          <div class="flex flex-wrap items-center gap-4">
+            <a href="pairing-wizard.html" class="inline-flex items-center justify-center bg-[#EBD59B] hover:bg-[#DFCA8F] text-[#26241E] font-semibold text-sm sm:text-base px-8 py-3.5 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 active:scale-95 focus-visible:ring-2 focus-visible:ring-white">
+              Підібрати ідеальну пару
+            </a>
+            <a href="#media-hub" class="inline-flex items-center justify-center bg-white/10 hover:bg-white/20 text-white border border-white/30 backdrop-blur-sm font-semibold text-sm sm:text-base px-6 py-3.5 rounded-full transition-all duration-300 active:scale-95">
+              Дивитися відео ▷
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. SECTION: «ЯК ЦЕ ПРАЦЮЄ» (Переваги платформи) -->
+    <section id="how-it-works" class="py-20 lg:py-24 bg-[#FAF7F2]" aria-labelledby="how-it-works-title">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          
+          <!-- Left Column: 3 Steps -->
+          <div class="lg:col-span-6 space-y-8">
+            <div>
+              <span class="text-xs font-bold tracking-widest uppercase text-[#203127] mb-2 block">ЯК ЦЕ ПРАЦЮЄ</span>
+              <h2 id="how-it-works-title" class="font-serif font-bold text-3xl sm:text-4xl text-stone-900">Гастрономічний алгоритм підбору</h2>
+            </div>
+
+            <div class="space-y-6">
+              <!-- Step 1 -->
+              <article class="flex items-start gap-4 p-3 rounded-2xl transition-colors hover:bg-white/70">
+                <div class="w-12 h-12 rounded-full bg-[#F4EFE6] text-[#705417] flex items-center justify-center flex-shrink-0 shadow-sm" aria-hidden="true">
+                  <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 10l9-7 9 7v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V10z"/>
+                    <path d="M9 21V12h6v9"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-serif font-bold text-lg text-stone-900 mb-1">Маєте сир</h3>
+                  <p class="text-sm text-stone-600 leading-relaxed">Оберіть сир з каталогу, і ми знайдемо вино, що розкриє його характер та баланс кислотності.</p>
+                </div>
+              </article>
+
+              <!-- Step 2 -->
+              <article class="flex items-start gap-4 p-3 rounded-2xl transition-colors hover:bg-white/70">
+                <div class="w-12 h-12 rounded-full bg-[#F4EFE6] text-[#705417] flex items-center justify-center flex-shrink-0 shadow-sm" aria-hidden="true">
+                  <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M8 22h8"/>
+                    <path d="M12 15v7"/>
+                    <path d="M12 15a5 5 0 0 0 5-5V3H7v7a5 5 0 0 0 5 5z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-serif font-bold text-lg text-stone-900 mb-1">Маєте вино</h3>
+                  <p class="text-sm text-stone-600 leading-relaxed">Вкажіть сорт або пляшку, і ми підберемо сир, який підкреслить кожну танінну ноту.</p>
+                </div>
+              </article>
+
+              <!-- Step 3 -->
+              <article class="flex items-start gap-4 p-3 rounded-2xl transition-colors hover:bg-white/70">
+                <div class="w-12 h-12 rounded-full bg-[#F4EFE6] text-[#705417] flex items-center justify-center flex-shrink-0 shadow-sm" aria-hidden="true">
+                  <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-serif font-bold text-lg text-stone-900 mb-1">Індивідуальний підбір</h3>
+                  <p class="text-sm text-stone-600 leading-relaxed">Пройдіть короткий інтерактивний тест, і ми створимо персональну пару під ваш настрій.</p>
+                </div>
+              </article>
+            </div>
+
+            <!-- CTA Row -->
+            <div class="flex items-center gap-4 pt-2">
+              <a href="pairing-wizard.html" class="inline-flex items-center justify-center bg-[#203127] hover:bg-[#16241C] text-white font-semibold text-sm px-7 py-3 rounded-full transition-all shadow-sm hover:shadow-md active:scale-95 focus-visible:ring-2 focus-visible:ring-[#203127]">
+                Почати підбір
+              </a>
+              <a href="#dobirka" class="inline-flex items-center text-sm font-semibold text-stone-800 hover:text-[#203127] transition-colors p-2">
+                Переглянути збірки &gt;
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column: Visual Grapevine Image -->
+          <div class="lg:col-span-6">
+            <figure class="rounded-3xl overflow-hidden shadow-2xl border border-stone-200/80 bg-white p-1">
+              <img src="assets/images/grapes_vine.jpg" alt="Свіжий український виноград на сонячній лозі терруару" class="w-full h-[380px] sm:h-[440px] object-cover rounded-2xl" loading="lazy" decoding="async" width="800" height="440">
+              <figcaption class="sr-only">Лоза українського терруару для створення сортових крафтових вин</figcaption>
+            </figure>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. SECTION: «ДОБІРКА ПАР» (Галерея вибору) -->
+    <section id="dobirka" class="py-20 lg:py-24 bg-[#1A1715] text-white" aria-labelledby="dobirka-title">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <header class="text-center max-w-2xl mx-auto mb-10">
+          <h2 id="dobirka-title" class="font-serif font-bold text-3xl sm:text-4xl text-white mb-3">Добірка найкращих пар</h2>
+          <p class="text-sm sm:text-base text-stone-400">Перевірені гастрономічні комбінації з найвищим рейтингом збігу експертів.</p>
+        </header>
+
+        <!-- Filter Chips -->
+        <div class="flex flex-wrap justify-center gap-2 mb-12" role="tablist" aria-label="Фільтри категорій сирів та вин">
+          <button type="button" class="bg-[#EBD59B] text-[#26241E] font-semibold text-xs px-5 py-2 rounded-full transition-all" role="tab" aria-selected="true">Усі</button>
+          <button type="button" class="bg-[#24201D] hover:bg-stone-800 text-stone-300 font-medium text-xs px-5 py-2 rounded-full border border-stone-700/60 transition-colors" role="tab" aria-selected="false">М'які сири</button>
+          <button type="button" class="bg-[#24201D] hover:bg-stone-800 text-stone-300 font-medium text-xs px-5 py-2 rounded-full border border-stone-700/60 transition-colors" role="tab" aria-selected="false">Тверді сири</button>
+          <button type="button" class="bg-[#24201D] hover:bg-stone-800 text-stone-300 font-medium text-xs px-5 py-2 rounded-full border border-stone-700/60 transition-colors" role="tab" aria-selected="false">Білі вина</button>
+          <button type="button" class="bg-[#24201D] hover:bg-stone-800 text-stone-300 font-medium text-xs px-5 py-2 rounded-full border border-stone-700/60 transition-colors" role="tab" aria-selected="false">Червоні вина</button>
+        </div>
+
+        <!-- 3 Pairing Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          <!-- Card 1: Брі де Мо & Шардоне -->
+          <article class="bg-[#24201D] rounded-2xl overflow-hidden border border-stone-800 hover:border-stone-700 transition-all duration-300 group flex flex-col shadow-lg">
+            <div class="relative h-56 overflow-hidden">
+              <img src="assets/images/pairing_1.png" alt="Біле витримане вино та вершковий брі" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" width="600" height="350">
+              <span class="absolute top-3 right-3 bg-black/75 backdrop-blur-sm text-stone-200 text-xs font-semibold px-3 py-1 rounded-full border border-stone-700/50">98% збіг</span>
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center gap-2 mb-3">
+                  <span class="bg-[#F0ECE4]/10 text-stone-300 text-[11px] font-medium px-2.5 py-0.5 rounded-full">М'який сир</span>
+                  <span class="bg-[#EBD59B]/20 text-[#EBD59B] text-[11px] font-semibold px-2.5 py-0.5 rounded-full">Біле сухе</span>
+                </div>
+                <h3 class="font-serif font-bold text-xl text-white mb-2">Брі де Мо &amp; Шардоне</h3>
+                <p class="text-xs sm:text-sm text-stone-400 leading-relaxed mb-4">
+                  Масляниста вершковість сиру ідеально збалансована свіжою кислотністю та яблучними нотами витриманого білого.
+                </p>
+              </div>
+              <a href="pairing-result.html" class="inline-flex items-center text-xs font-semibold text-[#EBD59B] hover:text-white transition-colors group-hover:translate-x-1 duration-200 p-1" aria-label="Деталі гастрономічного поєднання Брі де Мо та Шардоне">
+                Деталі поєднання →
+              </a>
+            </div>
+          </article>
+
+          <!-- Card 2: Гуцульська бринза & Рислінг -->
+          <article class="bg-[#24201D] rounded-2xl overflow-hidden border border-stone-800 hover:border-stone-700 transition-all duration-300 group flex flex-col shadow-lg">
+            <div class="relative h-56 overflow-hidden">
+              <img src="assets/images/pairing_2.png" alt="Полонинський сир та сонячний Рислінг" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" width="600" height="350">
+              <span class="absolute top-3 right-3 bg-black/75 backdrop-blur-sm text-stone-200 text-xs font-semibold px-3 py-1 rounded-full border border-stone-700/50">95% збіг</span>
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center gap-2 mb-3">
+                  <span class="bg-[#F0ECE4]/10 text-stone-300 text-[11px] font-medium px-2.5 py-0.5 rounded-full">Витриманий сир</span>
+                  <span class="bg-[#EBD59B]/20 text-[#EBD59B] text-[11px] font-semibold px-2.5 py-0.5 rounded-full">Амбер / Помаранчеве</span>
+                </div>
+                <h3 class="font-serif font-bold text-xl text-white mb-2">Гуцульська бринза &amp; Рислінг</h3>
+                <p class="text-xs sm:text-sm text-stone-400 leading-relaxed mb-4">
+                  Пікантна солонуватість овечого полонинського сиру підкреслюється соковитими цитрусово-мінеральними відтінками.
+                </p>
+              </div>
+              <a href="pairing-result.html" class="inline-flex items-center text-xs font-semibold text-[#EBD59B] hover:text-white transition-colors group-hover:translate-x-1 duration-200 p-1" aria-label="Деталі гастрономічного поєднання Гуцульської бринзи та Рислінгу">
+                Деталі поєднання →
+              </a>
+            </div>
+          </article>
+
+          <!-- Card 3: Закарпатський селіс & Каберне -->
+          <article class="bg-[#24201D] rounded-2xl overflow-hidden border border-stone-800 hover:border-stone-700 transition-all duration-300 group flex flex-col shadow-lg">
+            <div class="relative h-56 overflow-hidden">
+              <img src="assets/images/pairing_3.png" alt="Твердий крафтовий сир та витримане червоне вино" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" width="600" height="350">
+              <span class="absolute top-3 right-3 bg-black/75 backdrop-blur-sm text-stone-200 text-xs font-semibold px-3 py-1 rounded-full border border-stone-700/50">94% збіг</span>
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center gap-2 mb-3">
+                  <span class="bg-[#F0ECE4]/10 text-stone-300 text-[11px] font-medium px-2.5 py-0.5 rounded-full">Твердий сир</span>
+                  <span class="bg-[#EBD59B]/20 text-[#EBD59B] text-[11px] font-semibold px-2.5 py-0.5 rounded-full">Червоне сухе</span>
+                </div>
+                <h3 class="font-serif font-bold text-xl text-white mb-2">Закарпатський селіс &amp; Каберне</h3>
+                <p class="text-xs sm:text-sm text-stone-400 leading-relaxed mb-4">
+                  Густий карамельно-горіховий смак сиру створює глибоку гармонію з оксамитовими танінами та лісовими ягодами.
+                </p>
+              </div>
+              <a href="pairing-result.html" class="inline-flex items-center text-xs font-semibold text-[#EBD59B] hover:text-white transition-colors group-hover:translate-x-1 duration-200 p-1" aria-label="Деталі гастрономічного поєднання Закарпатського селісу та Каберне">
+                Деталі поєднання →
+              </a>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= FANCYBOX V5 ГАЛЕРЕЯ: ТЕРРУАРИ ТА ЛЬОХИ (ЛР №10) ================= -->
+    <section id="gallery" class="py-20 lg:py-24 bg-[#1A1715] text-white border-t border-stone-800" aria-labelledby="gallery-title">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-14">
+          <span class="text-xs font-bold tracking-widest uppercase text-[#EBD59B] mb-2 block">МОДАЛЬНА ГАЛЕРЕЯ • FANCYBOX V5</span>
+          <h2 id="gallery-title" class="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl text-white mb-4">
+            Естетика нашого винного льоху та сироварень
+          </h2>
+          <p class="text-base text-stone-300">
+            Клікніть на зображення для перегляду у високій якості через модальний лайтбокс Fancybox v5 з підтримкою зуму, слайдшоу та тач-жестів.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Елемент 1 -->
+          <a href="assets/images/wine_cellar.png" 
+             data-fancybox="somelia-gallery" 
+             data-caption="Винний льох SOMELIA: столітні дубові діжки та колекційні витримані вина" 
+             class="group relative block overflow-hidden rounded-2xl border border-stone-700/80 aspect-[4/3] bg-stone-900 shadow-lg cursor-zoom-in">
+            <img src="assets/images/wine_cellar.png" alt="Винний льох SOMELIA" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" width="800" height="600">
+            <div class="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+              <span class="text-sm font-semibold text-[#EBD59B] flex items-center gap-1.5">🔍 Збільшити дегустаційний льох</span>
+            </div>
+          </a>
+
+          <!-- Елемент 2 -->
+          <a href="assets/images/cheese_platter_rustic.jpg" 
+             data-fancybox="somelia-gallery" 
+             data-caption="Камера афінажу: дозрівання твердих крафтових сирів типу Пармезан та Ґрюєр" 
+             class="group relative block overflow-hidden rounded-2xl border border-stone-700/80 aspect-[4/3] bg-stone-900 shadow-lg cursor-zoom-in">
+            <img src="assets/images/cheese_platter_rustic.jpg" alt="Витримка сиру" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" width="800" height="600">
+            <div class="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+              <span class="text-sm font-semibold text-[#EBD59B] flex items-center gap-1.5">🔍 Афінаж крафтових сирів</span>
+            </div>
+          </a>
+
+          <!-- Елемент 3 -->
+          <a href="assets/images/grapes_vine.jpg" 
+             data-fancybox="somelia-gallery" 
+             data-caption="Сонячні виноградники Подільських Товтр та Півдня України під час збору врожаю" 
+             class="group relative block overflow-hidden rounded-2xl border border-stone-700/80 aspect-[4/3] bg-stone-900 shadow-lg cursor-zoom-in">
+            <img src="assets/images/grapes_vine.jpg" alt="Виноградники України" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" width="800" height="600">
+            <div class="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+              <span class="text-sm font-semibold text-[#EBD59B] flex items-center gap-1.5">🔍 Сонячна лоза терруару</span>
+            </div>
+          </a>
+
+          <!-- Елемент 4 -->
+          <a href="assets/images/winery_landscape.png" 
+             data-fancybox="somelia-gallery" 
+             data-caption="Панорама шато та локальної виноробні на схилах Карпат" 
+             class="group relative block overflow-hidden rounded-2xl border border-stone-700/80 aspect-[4/3] bg-stone-900 shadow-lg cursor-zoom-in">
+            <img src="assets/images/winery_landscape.png" alt="Панорама виноробні" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" width="800" height="600">
+            <div class="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+              <span class="text-sm font-semibold text-[#EBD59B] flex items-center gap-1.5">🔍 Панорама локального шато</span>
+            </div>
+          </a>
+
+          <!-- Елемент 5 -->
+          <a href="assets/images/wine_bottles_row.png" 
+             data-fancybox="somelia-gallery" 
+             data-caption="Авторські колекції сухих вин ручного розливу та контрольованого походження" 
+             class="group relative block overflow-hidden rounded-2xl border border-stone-700/80 aspect-[4/3] bg-stone-900 shadow-lg cursor-zoom-in">
+            <img src="assets/images/wine_bottles_row.png" alt="Колекційні пляшки вина" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" width="800" height="600">
+            <div class="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+              <span class="text-sm font-semibold text-[#EBD59B] flex items-center gap-1.5">🔍 Авторська колекція</span>
+            </div>
+          </a>
+
+          <!-- Елемент 6 -->
+          <a href="assets/images/card_brie_chardonnay.jpg" 
+             data-fancybox="somelia-gallery" 
+             data-caption="Золотий гастрономічний тандем: ніжний вершковий Брі та маслянисте Шардоне" 
+             class="group relative block overflow-hidden rounded-2xl border border-stone-700/80 aspect-[4/3] bg-stone-900 shadow-lg cursor-zoom-in">
+            <img src="assets/images/card_brie_chardonnay.jpg" alt="Поєднання Брі та Шардоне" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" width="800" height="600">
+            <div class="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+              <span class="text-sm font-semibold text-[#EBD59B] flex items-center gap-1.5">🔍 Дегустаційна подача пари</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. QUICK FEATURES BAR: 4 Services (Послуги платформи) -->
+    <section class="bg-[#F4EFE6] border-y border-stone-200/70 py-12" aria-label="Швидка навігація по сервісах Somelia">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          
+          <!-- Feature 1 -->
+          <a href="cheese-catalog.html" class="flex items-center gap-4 group p-3 rounded-2xl hover:bg-white/70 transition-colors">
+            <div class="w-12 h-12 rounded-2xl bg-white text-[#203127] flex items-center justify-center flex-shrink-0 shadow-sm group-hover:bg-[#203127] group-hover:text-white transition-colors duration-200" aria-hidden="true">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 10l9-7 9 7v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V10z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-stone-900 text-sm group-hover:text-[#203127] transition-colors">Каталог сирів</h3>
+              <p class="text-xs text-stone-500 mt-0.5">Крафтові сири від локальних сироварень</p>
+            </div>
+          </a>
+
+          <!-- Feature 2 -->
+          <a href="wine-catalog.html" class="flex items-center gap-4 group p-3 rounded-2xl hover:bg-white/70 transition-colors">
+            <div class="w-12 h-12 rounded-2xl bg-white text-[#203127] flex items-center justify-center flex-shrink-0 shadow-sm group-hover:bg-[#203127] group-hover:text-white transition-colors duration-200" aria-hidden="true">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M8 22h8M12 15v7M12 15a5 5 0 0 0 5-5V3H7v7a5 5 0 0 0 5 5z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-stone-900 text-sm group-hover:text-[#203127] transition-colors">Каталог вин</h3>
+              <p class="text-xs text-stone-500 mt-0.5">Автентичні вина з українських терруарів</p>
+            </div>
+          </a>
+
+          <!-- Feature 3 -->
+          <a href="pairing-wizard.html" class="flex items-center gap-4 group p-3 rounded-2xl hover:bg-white/70 transition-colors">
+            <div class="w-12 h-12 rounded-2xl bg-white text-[#203127] flex items-center justify-center flex-shrink-0 shadow-sm group-hover:bg-[#203127] group-hover:text-white transition-colors duration-200" aria-hidden="true">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-stone-900 text-sm group-hover:text-[#203127] transition-colors">Майстер підбору</h3>
+              <p class="text-xs text-stone-500 mt-0.5">Швидкий алгоритм для ідеальної пари</p>
+            </div>
+          </a>
+
+          <!-- Feature 4 -->
+          <a href="favorites.html" class="flex items-center gap-4 group p-3 rounded-2xl hover:bg-white/70 transition-colors">
+            <div class="w-12 h-12 rounded-2xl bg-white text-[#203127] flex items-center justify-center flex-shrink-0 shadow-sm group-hover:bg-[#203127] group-hover:text-white transition-colors duration-200" aria-hidden="true">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-stone-900 text-sm group-hover:text-[#203127] transition-colors">Обрані пари</h3>
+              <p class="text-xs text-stone-500 mt-0.5">Збережені комбінації без реєстрації</p>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 5. MULTIMEDIA SECTION: CRAFT VIDEO HUB (ЕТАП 7: Вбудовування відео YouTube) ================= -->
+    <section id="media-hub" class="py-20 lg:py-24 bg-[#FAF7F2] border-t border-stone-200/70" aria-labelledby="media-hub-title">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <span class="text-xs font-bold tracking-widest uppercase text-[#203127] mb-2 block">ВІДЕО-ПРЕЗЕНТАЦІЯ</span>
+          <h2 id="media-hub-title" class="font-serif font-bold text-3xl sm:text-4xl text-stone-900 mb-4">
+            Мистецтво крафту: як народжуються українські вина та сири
+          </h2>
+          <p class="text-sm sm:text-base text-stone-600 leading-relaxed">
+            Пориньте у затишну атмосферу карпатських сироварень та сонячних виноградників Причорномор'я. Дізнайтеся, як майстерність виноробів та традиції ферментації створюють неповторні українські гастрономічні шедеври.
+          </p>
+        </div>
+
+        <!-- Semantic Video Container: aspect-video, loading="lazy", title, referrerpolicy -->
+                <!-- Semantic Video Container: aspect-video, loading="lazy", title, referrerpolicy (Етап 7) -->
+                <!-- Semantic Video Container: aspect-video, loading="lazy", title, referrerpolicy (Етап 7) -->
+        <figure class="max-w-4xl mx-auto">
+          <div id="videoContainer" class="relative w-full aspect-video rounded-2xl shadow-xl overflow-hidden bg-stone-900 border border-stone-200/80 group">
+            <iframe 
+              id="mainVideoPlayer"
+              src="https://www.youtube.com/embed/55B1mvQuGBI" 
+              title="Відео-презентація культури українського виноробства та крафтового сироваріння SOMELIA" 
+              loading="lazy" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              referrerpolicy="strict-origin-when-cross-origin" 
+              class="w-full h-full border-0 block"
+              allowfullscreen>
+            </iframe>
+
+            <!-- YouTube Player Interactive Link (для ідеального відкриття без помилки 153 на локальному протоколі file://) -->
+            <a id="ytLocalCover" 
+               href="https://www.youtube.com/watch?v=55B1mvQuGBI" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               style="display: none; background-image: url('assets/images/youtube_poster.jpg'); background-size: cover; background-position: center;" 
+               class="absolute inset-0 z-10 flex flex-col justify-between p-4 sm:p-6 text-white no-underline transition-all duration-300"
+               aria-label="Дивитися відео Сироварня Бараново на YouTube">
+              
+              <!-- Gradient overlay -->
+              <div class="absolute inset-0 bg-gradient-to-t from-stone-950/85 via-stone-950/30 to-stone-950/70 pointer-events-none"></div>
+
+              <!-- Top Bar -->
+              <div class="relative z-10 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-red-600 text-white shadow-md">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 22c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 2c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/></svg>
+                  </span>
+                  <span class="font-semibold text-sm sm:text-base text-white drop-shadow line-clamp-1">
+                    Сироварня "Бараново" — крафтове сироваріння SOMELIA
+                  </span>
+                </div>
+                <span class="text-xs font-semibold bg-red-600 text-white px-2.5 py-1 rounded shadow-sm">YouTube</span>
+              </div>
+
+              <!-- Center Play Button -->
+              <div class="relative z-10 flex items-center justify-center my-auto">
+                <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-red-600 group-hover:bg-red-700 text-white flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-transform duration-300 ring-4 ring-white/30">
+                  <svg class="w-8 h-8 sm:w-10 sm:h-10 fill-current translate-x-0.5" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                </div>
+              </div>
+
+              <!-- Bottom Bar -->
+              <div class="relative z-10 flex items-center justify-between text-xs sm:text-sm text-stone-200">
+                <span class="flex items-center gap-1.5 drop-shadow">
+                  <span>▶</span> Відкрити та дивитися відео на YouTube
+                </span>
+                <span class="bg-white/20 hover:bg-white/30 text-white backdrop-blur-sm font-medium px-3 py-1 rounded-full text-xs">
+                  Дивитися ↗
+                </span>
+              </div>
+            </a>
+          </div>
+
+          <figcaption class="mt-4 text-center text-xs sm:text-sm text-stone-500 italic">
+            Гастрономічна подорож українськими теруарами: автентичні технології та культура правильного фудпейрінгу
+          </figcaption>
+        </figure>
+
+      </div>
+    </section>
+
+    <!-- ================= 6. DYNAMIC INFORMER / WIDGET: TERROIR WEATHER (Інтерактивний віджет клімату) ================= -->
+    <aside class="py-12 bg-[#F4EFE6] border-y border-stone-200/80" aria-label="Погодні умови та мікроклімат ключових українських теруарів">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8">
+          <div>
+            <span class="text-xs font-bold tracking-widest uppercase text-[#705417] block mb-1">МЕТЕО-ДАНІ ТЕРРУАРІВ</span>
+            <h3 class="font-serif font-bold text-2xl text-stone-900">Кліматичні умови сезону збору та витримки</h3>
+          </div>
+          <div class="flex items-center gap-2 text-xs text-stone-500">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span>Оновлено сьогодні: оптимальні умови ферментації</span>
+          </div>
+        </div>
+
+        <!-- 3 Regional Microclimate Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          <!-- Terroir 1: Закарпаття -->
+          <div class="terroir-widget-card bg-white p-5 rounded-2xl border border-stone-200 shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex items-center justify-between mb-3">
+              <span class="font-serif font-bold text-lg text-stone-900">Закарпаття (Берегове)</span>
+              <span class="weather-badge bg-amber-100 text-amber-800">☀️ +22°C</span>
+            </div>
+            <p class="text-xs text-stone-600 mb-3">Сонячний терруар вулканічних схилів. Ідеальний баланс цукристості для білих сортів Черсегі та Трамінер.</p>
+            <div class="flex items-center justify-between text-[11px] text-stone-500 pt-2 border-t border-stone-100">
+              <span>Вологість: 58%</span>
+              <span class="font-semibold text-emerald-700">Стан лози: Відмінний</span>
+            </div>
+          </div>
+
+          <!-- Terroir 2: Поділля & Дністер -->
+          <div class="terroir-widget-card bg-white p-5 rounded-2xl border border-stone-200 shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex items-center justify-between mb-3">
+              <span class="font-serif font-bold text-lg text-stone-900">Подільські Товтри</span>
+              <span class="weather-badge bg-sky-100 text-sky-800">⛅ +19°C</span>
+            </div>
+            <p class="text-xs text-stone-600 mb-3">Вапнякові ґрунти та помірний вітер каньйону Дністра. Природна прохолода для повільного визрівання сирів.</p>
+            <div class="flex items-center justify-between text-[11px] text-stone-500 pt-2 border-t border-stone-100">
+              <span>Вологість: 65%</span>
+              <span class="font-semibold text-emerald-700">Льохи: Оптимально</span>
+            </div>
+          </div>
+
+          <!-- Terroir 3: Карпатські Полонини -->
+          <div class="terroir-widget-card bg-white p-5 rounded-2xl border border-stone-200 shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex items-center justify-between mb-3">
+              <span class="font-serif font-bold text-lg text-stone-900">Карпатські Полонини</span>
+              <span class="weather-badge bg-emerald-100 text-emerald-800">🍃 +16°C</span>
+            </div>
+            <p class="text-xs text-stone-600 mb-3">Чисте високогірне різнотрав'я та свіже гірське повітря. Традиційний сезон виробництва гуцульської овечої бринзи.</p>
+            <div class="flex items-center justify-between text-[11px] text-stone-500 pt-2 border-t border-stone-100">
+              <span>Вологість: 74%</span>
+              <span class="font-semibold text-emerald-700">Випас отар: Активний</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </aside>
+
+    <!-- 7. SECTION: CTA BANNER «Підбір пари» -->
+    <section class="py-20 lg:py-24 bg-[#3D1B22] text-white text-center" aria-labelledby="wine-banner-title">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <span class="text-xs font-bold tracking-widest uppercase text-[#EBD59B] mb-3 block">ПІДБІР ПАРИ</span>
+        <h2 id="wine-banner-title" class="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl text-white mb-4">
+          Оберіть сир і вино
+        </h2>
+        <p class="text-sm sm:text-base text-stone-300 mb-8 max-w-xl mx-auto leading-relaxed">
+          Створіть неповторну гастрономічну симфонію для вашого вечора за лічені хвилини з експертними рекомендаціями SOMELIA.
+        </p>
+        <div>
+          <a href="pairing-wizard.html" class="inline-flex items-center justify-center bg-[#EBD59B] hover:bg-[#DFCA8F] text-[#26241E] font-semibold text-sm sm:text-base px-8 py-3.5 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 active:scale-95 focus-visible:ring-2 focus-visible:ring-white">
+            Спробувати майстер підбору
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SWIPER.JS V11 СЛАЙДЕР ВІДГУКІВ ЕКСПЕРТІВ (ЛР №10) ================= -->
+    <section id="reviews" class="py-20 lg:py-24 bg-[#FAF7F2] border-t border-stone-200/80" aria-labelledby="reviews-title">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-14">
+          <span class="text-xs font-bold tracking-widest uppercase text-[#203127] mb-2 block">РЕКОМЕНДАЦІЇ ЕКСПЕРТІВ • SWIPER.JS V11</span>
+          <h2 id="reviews-title" class="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl text-[#203127] mb-4">
+            Оцінки провідних сомельє та шеф-кухарів
+          </h2>
+          <p class="text-base text-stone-600">
+            Адаптивна сенсорна карусель з автоматичним гортанням (інженерний стандарт: зупиняється при наведенні миші).
+          </p>
+        </div>
+
+        <!-- Swiper Container -->
+        <div class="swiper reviews-swiper !pb-14">
+          <div class="swiper-wrapper">
+            
+            <!-- Слайд 1 -->
+            <div class="swiper-slide h-auto">
+              <div class="bg-white p-7 sm:p-8 rounded-2xl border border-stone-200/90 shadow-md h-full flex flex-col justify-between hover:shadow-xl transition-shadow">
+                <div>
+                  <div class="text-amber-500 text-lg mb-3 tracking-widest">★★★★★</div>
+                  <p class="text-stone-700 italic text-sm sm:text-base leading-relaxed mb-6">
+                    «SOMELIA кардинально змінила культуру споживання крафту. Поєднання гуцульської витриманої бриндзі з Одеським Чорним стало справжнім відкриттям для наших гостей!»
+                  </p>
+                </div>
+                <div class="flex items-center gap-4 pt-4 border-t border-stone-100">
+                  <div class="w-12 h-12 rounded-full bg-[#203127] text-[#EBD59B] flex items-center justify-center font-serif font-bold text-base shadow">
+                    ОД
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-stone-900 text-sm">Олександр Данилюк</h4>
+                    <p class="text-xs text-stone-500">Шеф-сомельє ресторану «Terroir»</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Слайд 2 -->
+            <div class="swiper-slide h-auto">
+              <div class="bg-white p-7 sm:p-8 rounded-2xl border border-stone-200/90 shadow-md h-full flex flex-col justify-between hover:shadow-xl transition-shadow">
+                <div>
+                  <div class="text-amber-500 text-lg mb-3 tracking-widest">★★★★★</div>
+                  <p class="text-stone-700 italic text-sm sm:text-base leading-relaxed mb-6">
+                    «Рекомендація поєднати вершковий Брі де Мо з українським ігристим Брютом — це класика еногастрономії. Свіжі бульбашки ідеально змивають насичену текстуру сиру!»
+                  </p>
+                </div>
+                <div class="flex items-center gap-4 pt-4 border-t border-stone-100">
+                  <div class="w-12 h-12 rounded-full bg-[#3D1B22] text-[#EBD59B] flex items-center justify-center font-serif font-bold text-base shadow">
+                    МР
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-stone-900 text-sm">Марко Россі</h4>
+                    <p class="text-xs text-stone-500">Експерт з вин та афінажу сирів</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Слайд 3 -->
+            <div class="swiper-slide h-auto">
+              <div class="bg-white p-7 sm:p-8 rounded-2xl border border-stone-200/90 shadow-md h-full flex flex-col justify-between hover:shadow-xl transition-shadow">
+                <div>
+                  <div class="text-amber-500 text-lg mb-3 tracking-widest">★★★★★</div>
+                  <p class="text-stone-700 italic text-sm sm:text-base leading-relaxed mb-6">
+                    «Твердий карпатський сир 24 місяців витримки та витримане червоне вино Каберне — еталонний тандем. Зернистий білок пом'якшує сухі таніни. Браво платформі SOMELIA!»
+                  </p>
+                </div>
+                <div class="flex items-center gap-4 pt-4 border-t border-stone-100">
+                  <div class="w-12 h-12 rounded-full bg-[#8A6D25] text-white flex items-center justify-center font-serif font-bold text-base shadow">
+                    ВК
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-stone-900 text-sm">Вікторія Кравчук</h4>
+                    <p class="text-xs text-stone-500">Крафтова сироварка, співзасновниця ферми</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Слайд 4 -->
+            <div class="swiper-slide h-auto">
+              <div class="bg-white p-7 sm:p-8 rounded-2xl border border-stone-200/90 shadow-md h-full flex flex-col justify-between hover:shadow-xl transition-shadow">
+                <div>
+                  <div class="text-amber-500 text-lg mb-3 tracking-widest">★★★★★</div>
+                  <p class="text-stone-700 italic text-sm sm:text-base leading-relaxed mb-6">
+                    «Трав'янистий козячий сир та мінеральний Совіньйон Блан із Дністровського каньйону — неперевершений дует. Ароматика зеленого яблука збігається на всі 100%.»
+                  </p>
+                </div>
+                <div class="flex items-center gap-4 pt-4 border-t border-stone-100">
+                  <div class="w-12 h-12 rounded-full bg-[#203127] text-[#EBD59B] flex items-center justify-center font-serif font-bold text-base shadow">
+                    ЖМ
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-stone-900 text-sm">Жан-Поль Моро</h4>
+                    <p class="text-xs text-stone-500">Енолог, викладач школи сомельє</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Слайд 5 -->
+            <div class="swiper-slide h-auto">
+              <div class="bg-white p-7 sm:p-8 rounded-2xl border border-stone-200/90 shadow-md h-full flex flex-col justify-between hover:shadow-xl transition-shadow">
+                <div>
+                  <div class="text-amber-500 text-lg mb-3 tracking-widest">★★★★★</div>
+                  <p class="text-stone-700 italic text-sm sm:text-base leading-relaxed mb-6">
+                    «Витримана Гауда 18 місяців з вином сорту Мерло створили неймовірний карамельно-вишневий післясмак. Справжнє свято для гурманів та зручний підбір пар!»
+                  </p>
+                </div>
+                <div class="flex items-center gap-4 pt-4 border-t border-stone-100">
+                  <div class="w-12 h-12 rounded-full bg-[#3D1B22] text-[#EBD59B] flex items-center justify-center font-serif font-bold text-base shadow">
+                    СВ
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-stone-900 text-sm">Софія Вербицька</h4>
+                    <p class="text-xs text-stone-500">Гастрономічний критик видання «Gourmet UA»</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Swiper Controls -->
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev !text-[#203127]"></div>
+          <div class="swiper-button-next !text-[#203127]"></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= 8. CONTACTS & SHOWROOM: GOOGLE MAPS (ЕТАП 7: Вбудовування інтерактивної карти) ================= -->
+    <section id="contacts" class="py-20 lg:py-24 bg-[#FAF7F2] border-t border-stone-200/80" aria-labelledby="contacts-section-title">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <span class="text-xs font-bold tracking-widest uppercase text-[#203127] mb-2 block">ЛОКАЦІЯ ТА ДЕГУСТАЦІЇ</span>
+          <h2 id="contacts-section-title" class="font-serif font-bold text-3xl sm:text-4xl text-stone-900 mb-4">
+            Дегустаційний простір SOMELIA
+          </h2>
+          <p class="text-sm sm:text-base text-stone-600 leading-relaxed">
+            Завітайте до нашого флагманського дегустаційного залу в історичному серці Києва на Подолі. Спробуйте автентичні комбінації наживо та поспілкуйтеся із сертифікованими сомельє.
+          </p>
+        </div>
+
+        <!-- 2-Column Responsive Grid: Location Details Card + Google Maps -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
+          
+          <!-- Left Column: Location Details Card -->
+          <article class="lg:col-span-5 bg-white p-8 sm:p-10 rounded-2xl border border-stone-200/80 shadow-lg flex flex-col justify-between">
+            <div class="space-y-6">
+              <div>
+                <span class="inline-block bg-[#FAF7F2] text-[#203127] border border-[#203127]/20 text-xs font-semibold px-3 py-1 rounded-full mb-3">
+                  Київський осередок крафту
+                </span>
+                <h3 class="font-serif font-bold text-2xl text-stone-900 mb-2">Шоурум та дегустаційний зал</h3>
+                <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">
+                  Понад 80 позицій витриманих сирів та 120 найменувань автохтонних українських вин з можливістю персонального сомельє-супроводу.
+                </p>
+              </div>
+
+              <div class="space-y-4 text-sm text-stone-700">
+                <div class="flex items-start gap-3">
+                  <div class="w-8 h-8 rounded-lg bg-[#FAF7F2] text-[#203127] flex items-center justify-center flex-shrink-0 mt-0.5 text-base" aria-hidden="true">
+                    📍
+                  </div>
+                  <div>
+                    <strong class="block text-stone-900 font-semibold">Адреса:</strong>
+                    <span>м. Київ, вул. Спаська, 12 (Поділ, 3 хвилини від ст. м. «Контрактова площа»)</span>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3">
+                  <div class="w-8 h-8 rounded-lg bg-[#FAF7F2] text-[#203127] flex items-center justify-center flex-shrink-0 mt-0.5 text-base" aria-hidden="true">
+                    🕒
+                  </div>
+                  <div>
+                    <strong class="block text-stone-900 font-semibold">Графік роботи:</strong>
+                    <span>Щодня з 11:00 до 22:00 (вечірні дегустаційні сети з 17:00)</span>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3">
+                  <div class="w-8 h-8 rounded-lg bg-[#FAF7F2] text-[#203127] flex items-center justify-center flex-shrink-0 mt-0.5 text-base" aria-hidden="true">
+                    📞
+                  </div>
+                  <div>
+                    <strong class="block text-stone-900 font-semibold">Телефон для бронювання:</strong>
+                    <a href="tel:+380442345678" class="text-[#203127] hover:underline font-medium">+380 (44) 234-56-78</a>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3">
+                  <div class="w-8 h-8 rounded-lg bg-[#FAF7F2] text-[#203127] flex items-center justify-center flex-shrink-0 mt-0.5 text-base" aria-hidden="true">
+                    ✉️
+                  </div>
+                  <div>
+                    <strong class="block text-stone-900 font-semibold">Електронна пошта:</strong>
+                    <a href="mailto:hello@somelia.ua" class="text-[#203127] hover:underline font-medium">hello@somelia.ua</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-6 mt-6 border-t border-stone-100 flex flex-wrap items-center gap-3">
+              <a href="contacts.html" class="inline-flex items-center justify-center bg-[#203127] hover:bg-[#16241C] text-white text-xs sm:text-sm font-semibold px-6 py-3 rounded-full transition-all shadow hover:shadow-md active:scale-95 focus-visible:ring-2 focus-visible:ring-[#203127]">
+                Записатися на дегустацію
+              </a>
+              <a href="https://maps.google.com/?q=Київ,вул.+Спаська,12" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-xs font-semibold text-stone-700 hover:text-[#203127] transition-colors p-2" title="Відкрити маршрут у застосунку Google Maps">
+                Прокласти маршрут ↗
+              </a>
+            </div>
+          </article>
+
+          <!-- Right Column: Semantic Interactive Google Map Wrapper -->
+          <figure class="lg:col-span-7 flex flex-col">
+            <div class="relative w-full h-[460px] min-h-[420px] rounded-2xl shadow-lg border border-stone-200/80 overflow-hidden bg-stone-100">
+              <iframe 
+                src="https://maps.google.com/maps?width=100%25&amp;height=460&amp;hl=uk&amp;q=%D0%B2%D1%83%D0%BB%D0%B8%D1%86%D1%8F%20%D0%A1%D0%BF%D0%B0%D1%81%D1%8C%D0%BA%D0%B0,%2012,%20%D0%9A%D0%B8%D1%97%D0%B2+(SOMELIA%20Tasting%20Room)&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" 
+                title="Інтерактивна Google-карта розташування дегустаційного залу SOMELIA (Київ, вул. Спаська, 12)" 
+                class="w-full h-full border-0 block" 
+                style="min-height: 420px; border: 0;" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade" 
+                allowfullscreen>
+              </iframe>
+            </div>
+            <figcaption class="mt-3 text-xs text-stone-500 italic text-center sm:text-left">
+              Інтерактивна навігація Google Maps: вул. Спаська, 12, Київ (історичний Поділ)
+            </figcaption>
+          </figure>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= SITE FOOTER (Figma Layout) ================= -->
+  <footer class="bg-[#1A1715] text-stone-300 pt-16 pb-12 border-t border-stone-800" role="contentinfo" aria-labelledby="footer-heading">
+    <h2 id="footer-heading" class="sr-only">Підвал сайту SOMELIA</h2>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- 4-Column Responsive Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-stone-800">
+        
+        <!-- Column 1: Brand Info -->
+        <div class="space-y-4">
+          <div class="flex items-center gap-3">
+            <img src="assets/images/somelia_sheep_icon.png" alt="SOMELIA" class="w-9 h-9 object-contain" width="36" height="36">
+            <span class="font-serif font-bold text-2xl text-white tracking-wider">SOMELIA</span>
+          </div>
+          <p class="text-xs sm:text-sm text-stone-400 leading-relaxed">
+            Платформа гастрономічної культури, що об'єднує поціновувачів крафтового українського сиру та шляхетного вина.
+          </p>
+          <div class="flex items-center gap-3 pt-2">
+            <!-- Instagram -->
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-stone-800 hover:bg-[#3D1B22] text-stone-300 hover:text-white flex items-center justify-center transition-colors focus-visible:ring-2 focus-visible:ring-white" aria-label="SOMELIA в Instagram">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </a>
+            <!-- Telegram -->
+            <a href="https://telegram.org" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-stone-800 hover:bg-[#3D1B22] text-stone-300 hover:text-white flex items-center justify-center transition-colors focus-visible:ring-2 focus-visible:ring-white" aria-label="SOMELIA в Telegram">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.863.966z"/>
+              </svg>
+            </a>
+            <!-- Facebook -->
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-stone-800 hover:bg-[#3D1B22] text-stone-300 hover:text-white flex items-center justify-center transition-colors focus-visible:ring-2 focus-visible:ring-white" aria-label="SOMELIA у Facebook">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2: Navigation -->
+        <div>
+          <h3 class="text-white font-serif font-bold text-base mb-4 tracking-wide">Навігація</h3>
+          <ul class="space-y-2.5 text-xs sm:text-sm">
+            <li><a href="index.html" class="hover:text-[#EBD59B] transition-colors">Головна</a></li>
+            <li><a href="#how-it-works" class="hover:text-[#EBD59B] transition-colors">Як це працює</a></li>
+            <li><a href="#dobirka" class="hover:text-[#EBD59B] transition-colors">Добірка пар</a></li>
+            <li><a href="#media-hub" class="hover:text-[#EBD59B] transition-colors">Медіа-хаб</a></li>
+            <li><a href="#contacts" class="hover:text-[#EBD59B] transition-colors">Дегустаційний зал</a></li>
+            <li><a href="pairing-wizard.html" class="hover:text-[#EBD59B] transition-colors">Майстер підбору</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Terroirs -->
+        <div>
+          <h3 class="text-white font-serif font-bold text-base mb-4 tracking-wide">Терруари України</h3>
+          <ul class="space-y-2.5 text-xs sm:text-sm">
+            <li><a href="cheese-catalog.html" class="hover:text-[#EBD59B] transition-colors">Закарпаття (Берегове)</a></li>
+            <li><a href="cheese-catalog.html" class="hover:text-[#EBD59B] transition-colors">Подільські Товтри &amp; Дністер</a></li>
+            <li><a href="cheese-catalog.html" class="hover:text-[#EBD59B] transition-colors">Південні теруари Одеси</a></li>
+            <li><a href="cheese-catalog.html" class="hover:text-[#EBD59B] transition-colors">Полонини Карпат</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Contacts -->
+        <div class="space-y-3">
+          <h3 class="text-white font-serif font-bold text-base mb-4 tracking-wide">Контакти</h3>
+          <p class="text-xs sm:text-sm text-stone-400">м. Київ, вул. Спаська, 12 (Поділ)</p>
+          <p class="text-xs sm:text-sm text-stone-400">
+            <a href="mailto:hello@somelia.ua" class="hover:text-[#EBD59B] transition-colors">hello@somelia.ua</a>
+          </p>
+          <p class="text-xs sm:text-sm text-stone-400">
+            <a href="tel:+380442345678" class="hover:text-[#EBD59B] transition-colors">+380 (44) 234-56-78</a>
+          </p>
+          <div class="flex flex-wrap items-center gap-3 pt-2 text-xs font-semibold text-stone-300">
+            <a href="contacts.html" class="hover:text-[#EBD59B] transition-colors underline underline-offset-4">Про проєкт</a>
+            <span class="text-stone-600">•</span>
+            <a href="contacts.html" class="hover:text-[#EBD59B] transition-colors underline underline-offset-4">Зворотний зв'язок</a>
+            <span class="text-stone-600">•</span>
+            <a href="assets/images/somelia_qr_code.png" data-fancybox="somelia-qr" data-caption="QR-код для мобільного QA-тестування SOMELIA: https://rusincuk.github.io/somelia/" class="hover:text-[#EBD59B] transition-colors underline underline-offset-4 flex items-center gap-1.5" aria-label="Відкрити QR-код для тестування сайту на смартфоні">
+              <span>📱</span>
+              <span>QR-код (Mobile QA)</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-500">
+        <p>&copy; 2026 SOMELIA. Усі права захищено. Лабораторні роботи №7–№12 (НУ «Львівська політехніка», САПР).</p>
+        <p class="text-stone-400">Розроблено за стандартами WCAG 2.2 AA • Lighthouse Optimized • CI/CD Automated</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Universal JavaScript for Mobile Drawer Navigation & Multimedia Handlers -->
+  <script src="js/mobile-nav.js" defer></script>
+  <script src="js/media-handler.js" defer></script>
+
+  <!-- ================= 2. CDN СКРИПТИ ПЛАГІНІВ (Vanilla JS без jQuery) • ЛР №10 ================= -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12" defer></script>
+
+  <!-- ================= 3. ВЛАСНИЙ СКРИПТ ІНІЦІАЛІЗАЦІЇ ПЛАГІНІВ • ЛР №10 ================= -->
+  <script src="app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,309 @@
+/* ==========================================================================
+   SOMELIA — Craft Cheese & Wine Pairing Platform
+   Laboratory Work #7: Multimedia Integration (YouTube, Google Maps, Informer)
+   Author: Rusynchuk (Русинчук), Group: PP-25
+   File: custom-styles.css
+   ========================================================================== */
+
+/* 1. Brand Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap');
+
+/* ==========================================================================
+   2. Design Tokens & CSS Custom Properties (:root)
+   Enabling DRY Principles across Video, Map, and Interactive Widgets
+   ========================================================================== */
+:root {
+  /* Media Dimensions & Proportions */
+  --media-aspect-ratio: 16 / 9;
+  --video-max-width: 960px;
+  --map-max-width: 100%;
+  --map-min-height: 420px;
+  --map-min-height-mobile: 320px;
+
+  /* Geometry & Box Model */
+  --media-radius: 1.25rem;       /* 20px */
+  --media-radius-sm: 0.75rem;    /* 12px */
+  --media-padding: 1.5rem;
+  
+  /* Elevation Shadows & Borders */
+  --media-shadow: 0 20px 25px -5px rgba(26, 23, 21, 0.12), 0 8px 10px -6px rgba(26, 23, 21, 0.08);
+  --media-shadow-hover: 0 25px 30px -5px rgba(26, 23, 21, 0.2), 0 12px 16px -6px rgba(26, 23, 21, 0.12);
+  --media-border: 1px solid rgba(229, 223, 213, 0.85);
+
+  /* Brand Palette */
+  --color-somelia-wine: #5B1E31;
+  --color-somelia-wine-hover: #481726;
+  --color-somelia-gold: #C9A86A;
+  --color-somelia-dark: #1A1715;
+  --color-somelia-forest: #203127;
+  --color-somelia-cream: #FAF7F2;
+  --color-somelia-surface: #F4EFE6;
+  --color-somelia-border: #E5DFD5;
+}
+
+/* 3. Global Document Reset Enhancements */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--color-somelia-cream);
+  color: #1F1916;
+}
+
+/* 4. Typography Accents for Brand Serif */
+.font-serif-brand {
+  font-family: 'Playfair Display', Georgia, Cambria, 'Times New Roman', serif;
+}
+
+/* 5. Hero Radial Vignette Overlay */
+.hero-vignette {
+  background: radial-gradient(circle at center, rgba(31, 25, 22, 0.65) 0%, rgba(31, 25, 22, 0.92) 100%);
+}
+
+.hero-vignette-wine {
+  background: radial-gradient(circle at 60% 40%, rgba(91, 30, 49, 0.72) 0%, rgba(31, 25, 22, 0.95) 100%);
+}
+
+/* 6. Custom Brand Scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F4ECE1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-somelia-gold);
+  border-radius: 6px;
+  border: 2px solid #F4ECE1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-somelia-wine);
+}
+
+/* 7. Subtle Glassmorphism Card Overlay */
+.glass-effect {
+  background: rgba(251, 248, 243, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.glass-effect-dark {
+  background: rgba(31, 25, 22, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+/* 8. Terroir Yellow Marquee Animation */
+@keyframes terroir-marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-terroir {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: terroir-marquee 28s linear infinite;
+}
+
+.animate-terroir:hover {
+  animation-play-state: paused;
+}
+
+/* 9. Accessible Focus Ring for Keyboard Navigation (WCAG 2.2 AA) */
+:focus-visible {
+  outline: 2px solid var(--color-somelia-gold);
+  outline-offset: 3px;
+}
+
+/* 10. Mobile Navigation Touch Enhancements */
+.touch-manipulation {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#mobileMenu {
+  transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+#mobileMenu.open {
+  display: block !important;
+}
+
+/* ==========================================================================
+   11. MULTIMEDIA INTEGRATION: Responsive YouTube Video Container (DRY)
+   Modern aspect-ratio: 16/9 with full mobile responsiveness & no layout shift
+   ========================================================================== */
+.media-video-wrapper {
+  max-width: var(--video-max-width);
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.media-video-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: var(--media-aspect-ratio);
+  border-radius: var(--media-radius);
+  box-shadow: var(--media-shadow);
+  border: var(--media-border);
+  overflow: hidden;
+  background-color: var(--color-somelia-dark);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.media-video-container:hover {
+  box-shadow: var(--media-shadow-hover);
+}
+
+.media-video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+/* ==========================================================================
+   12. MULTIMEDIA INTEGRATION: Responsive Google Maps Container (DRY)
+   Mobile-first responsive iframe integration with accessibility styling
+   ========================================================================== */
+.media-map-wrapper {
+  width: 100%;
+  max-width: var(--map-max-width);
+  margin: 0;
+}
+
+.media-map-container {
+  position: relative;
+  width: 100%;
+  min-height: var(--map-min-height);
+  height: 100%;
+  border-radius: var(--media-radius);
+  box-shadow: var(--media-shadow);
+  border: var(--media-border);
+  overflow: hidden;
+  background-color: var(--color-somelia-surface);
+  transition: box-shadow 0.3s ease;
+}
+
+@media (max-width: 640px) {
+  .media-map-container {
+    min-height: var(--map-min-height-mobile);
+    border-radius: var(--media-radius-sm);
+  }
+}
+
+.media-map-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  border: 0;
+  display: block;
+}
+
+/* ==========================================================================
+   13. DYNAMIC INFORMER / WIDGET: Terroir Weather & Harvest Conditions
+   Semantic <aside> container for regional microclimate live telemetry
+   ========================================================================== */
+.terroir-widget-card {
+  border-radius: var(--media-radius);
+  box-shadow: var(--media-shadow);
+  border: var(--media-border);
+  background-color: #FFFFFF;
+  padding: var(--media-padding);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.terroir-widget-card:hover {
+  box-shadow: var(--media-shadow-hover);
+}
+
+.weather-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.25rem 0.625rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   10. Swiper.js v11 & Fancybox v5 Custom Styling (Laboratory Work #10)
+   ========================================================================== */
+.reviews-swiper {
+  padding-bottom: 54px !important;
+  position: relative;
+}
+
+.reviews-swiper .swiper-pagination-bullet {
+  background: #8A6D25;
+  opacity: 0.35;
+  width: 10px;
+  height: 10px;
+  transition: all 0.3s ease;
+}
+
+.reviews-swiper .swiper-pagination-bullet-active {
+  background: #EBD59B;
+  opacity: 1;
+  width: 26px;
+  border-radius: 9999px;
+}
+
+.reviews-swiper .swiper-button-next,
+.reviews-swiper .swiper-button-prev {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(32, 49, 39, 0.9);
+  color: #EBD59B !important;
+  border: 1px solid rgba(235, 213, 155, 0.4);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease;
+}
+
+.reviews-swiper .swiper-button-next:hover,
+.reviews-swiper .swiper-button-prev:hover {
+  background: #16241C;
+  color: #FFFFFF !important;
+  transform: scale(1.05);
+}
+
+.reviews-swiper .swiper-button-next::after,
+.reviews-swiper .swiper-button-prev::after {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+@media (max-width: 640px) {
+  .reviews-swiper .swiper-button-next,
+  .reviews-swiper .swiper-button-prev {
+    display: none;
+  }
+}
+
+/* Typed cursor blink */
+.typed-cursor {
+  opacity: 1;
+  animation: typed-blink 0.8s infinite;
+  color: #EBD59B;
+}
+
+@keyframes typed-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}

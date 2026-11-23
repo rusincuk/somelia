@@ -1,0 +1,375 @@
+﻿<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Каталог українських крафтових вин SOMELIA. Автентичні вина від малих виноробів, автохтонні сорти та підбір сиру.">
+  <title>SOMELIA — Каталог вин | Українські терруари та автохтони</title>
+  <!-- Favicon & Canonical -->
+  <link rel="icon" type="image/png" href="assets/images/somelia_sheep_icon.png">
+  <link rel="canonical" href="https://rusincuk.github.io/somelia/wine-catalog.html">
+
+  <!-- Google Fonts: Playfair Display & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ================= SITE HEADER ================= -->
+  <header class="site-header" role="banner">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo" aria-label="SOMELIA — На головну">
+        <img src="assets/images/somelia_sheep_icon.png" alt="SOMELIA Логотип" class="logo-icon" width="38" height="38">
+        <span class="logo-text">SOMELIA</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="main-nav" aria-label="Головна навігація сайту">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="index.html" class="nav-link">Головна</a></li>
+          <li class="nav-item"><a href="cheese-catalog.html" class="nav-link">Каталог сирів</a></li>
+          <li class="nav-item"><a href="wine-catalog.html" class="nav-link active">Каталог вин</a></li>
+          <li class="nav-item"><a href="pairing-wizard.html" class="nav-link">Підбір пари</a></li>
+          <li class="nav-item"><a href="favorites.html" class="nav-link">Обрані пари</a></li>
+          <li class="nav-item dropdown">
+            <a href="wine-catalog.html" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+              Каталоги <span class="chevron-icon">▾</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="cheese-catalog.html">Каталог сирів</a></li>
+              <li><a href="wine-catalog.html">Каталог вин</a></li>
+              <li><a href="product-card.html">Картка сиру</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a href="contacts.html" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+              Більше <span class="chevron-icon">▾</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="contacts.html">Про нас та контакти</a></li>
+              <li><a href="pairing-result.html">Демо результату</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <a href="contacts.html" class="login-link">Увійти</a>
+        <a href="pairing-wizard.html" class="btn btn-primary-dark">Почати</a>
+        <button class="mobile-menu-btn" id="mobileMenuToggle" onclick="toggleSomeliaMenu(event)" aria-label="Відкрити головне меню" aria-expanded="false">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Navigation -->
+    <div id="mobileMenu" class="mobile-nav-drawer" style="display:none;">
+      <nav class="mobile-nav-links">
+        <a href="index.html">Головна</a>
+        <a href="cheese-catalog.html">Каталог сирів</a>
+        <a href="wine-catalog.html">Каталог вин</a>
+        <a href="pairing-wizard.html">Підбір пари</a>
+        <a href="favorites.html">Обрані пари</a>
+        <a href="contacts.html">Про нас та контакти</a>
+      </nav>
+      <div class="mobile-nav-actions">
+        <a href="contacts.html" class="mobile-btn-outline">Увійти в кабінет</a>
+        <a href="pairing-wizard.html" class="mobile-btn-primary">Почати підбір пари</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= BREADCRUMBS ================= -->
+  <nav class="breadcrumbs-nav" aria-label="Шлях сторінками">
+    <div class="container">
+      <ol class="breadcrumbs-list">
+        <li><a href="index.html">Головна</a></li>
+        <li class="breadcrumbs-sep">/</li>
+        <li class="breadcrumbs-current" aria-current="page">Каталог вин</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- ================= MAIN CONTENT ================= -->
+  <main id="main-content">
+
+    <!-- 1. HERO SECTION: «Каталог вин» -->
+    <section class="catalog-hero-section" aria-labelledby="wine-hero-title">
+      <div class="catalog-hero-bg">
+        <img src="assets/images/wine_cellar.png" alt="Винний погріб української крафтової виноробні" class="catalog-hero-img">
+        <div class="catalog-hero-overlay"></div>
+      </div>
+      <div class="container catalog-hero-container">
+        <div class="catalog-hero-content">
+          <span class="eyebrow-gold">УКРАЇНСЬКІ ТЕРРУАРИ • АВТЕНТИКА</span>
+          <h1 id="wine-hero-title" class="catalog-hero-title">Каталог крафтових вин</h1>
+          <p class="catalog-hero-subtitle">Чесні вина від малих українських виноробів. Фільтруйте за сортом, регіоном та смаком, щоб знайти своє.</p>
+          <div class="catalog-hero-btns">
+            <a href="#wine-collection" class="btn btn-gold">Переглянути винну колекцію</a>
+            <a href="pairing-wizard.html" class="btn btn-outline-light">Підібрати сир до вина</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Terroir Regions Yellow Strip -->
+      <nav class="terroir-strip" aria-label="Винні регіони">
+        <div class="container terroir-container">
+          <span class="terroir-tag">ОДЕЩИНА</span>
+          <span class="terroir-sep">•</span>
+          <span class="terroir-tag">ПРИДУНАВ'Я</span>
+          <span class="terroir-sep">•</span>
+          <span class="terroir-tag">ЗАКАРПАТТЯ</span>
+          <span class="terroir-sep">•</span>
+          <span class="terroir-tag">ПОДІЛЛЯ</span>
+          <span class="terroir-sep">•</span>
+          <span class="terroir-tag">БЕССАРАБІЯ</span>
+          <span class="terroir-sep">•</span>
+          <span class="terroir-tag">ХЕРСОНЩИНА</span>
+        </div>
+      </nav>
+    </section>
+
+    <!-- 2. SECTION: ФІЛЬТРАЦІЯ ВИН -->
+    <section class="find-cheese-section" aria-labelledby="find-wine-title">
+      <div class="container find-cheese-container">
+        <!-- Left: Filters & Form -->
+        <div class="find-cheese-content">
+          <span class="section-eyebrow">ПОШУК ВИНА</span>
+          <h2 id="find-wine-title" class="find-cheese-title">Оберіть своє ідеальне вино</h2>
+          <p class="find-cheese-desc">Фільтри за стилем, сортом винограду та солодкістю. Кожна пляшка вже має підготовлений смаковий радар для поєднання з сиром.</p>
+
+          <form class="cheese-filter-form" role="search" aria-label="Фільтри вин">
+            <!-- Filter Group: Wine Type -->
+            <fieldset class="filter-group">
+              <legend class="filter-label">СТИЛЬ ТА ТИП</legend>
+              <div class="filter-pill-options">
+                <button type="button" class="btn-filter-pill active" aria-pressed="true">Біле сухе</button>
+                <button type="button" class="btn-filter-pill" aria-pressed="false">Червоне сухе</button>
+                <button type="button" class="btn-filter-pill" aria-pressed="false">Оранж / Амбер</button>
+                <button type="button" class="btn-filter-pill" aria-pressed="false">Рожеве</button>
+                <button type="button" class="btn-filter-pill" aria-pressed="false">Ігристе</button>
+              </div>
+            </fieldset>
+
+            <!-- Filter Group: Grape Variety -->
+            <fieldset class="filter-group">
+              <legend class="filter-label">СОРТ ВИНОГРАДУ</legend>
+              <div class="filter-pill-options">
+                <button type="button" class="btn-filter-pill active" aria-pressed="true">Тельті-Курук</button>
+                <button type="button" class="btn-filter-pill" aria-pressed="false">Одеський Чорний</button>
+                <button type="button" class="btn-filter-pill" aria-pressed="false">Рислінг</button>
+                <button type="button" class="btn-filter-pill" aria-pressed="false">Сухолиманський</button>
+                <button type="button" class="btn-filter-pill" aria-pressed="false">Каберне</button>
+              </div>
+            </fieldset>
+
+            <!-- Buttons -->
+            <div class="filter-actions-row">
+              <button type="button" class="btn btn-primary-dark">Застосувати фільтри</button>
+              <button type="reset" class="btn btn-outline-dark">Скинути</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Right: Rounded Photo -->
+        <div class="find-cheese-visual">
+          <figure class="cheese-photo-frame">
+            <img src="assets/images/wine_glass_amber.png" alt="Келих бурштинового крафтового вина з виноградників" class="rounded-cheese-img" loading="lazy">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. SECTION: ВИННА КОЛЕКЦІЯ (Cards Grid) -->
+    <section id="wine-collection" class="collection-section" aria-labelledby="wine-collection-title">
+      <div class="container">
+        <header class="section-header-center">
+          <span class="eyebrow-gold">ВИННА КАРТА</span>
+          <h2 id="wine-collection-title" class="collection-title">Артизанальні вина України</h2>
+          <p class="collection-subtitle">Пляшки від крафтових виноробів, готові до гастрономічного знайомства.</p>
+      
+    </header>
+
+        <!-- 3 Wine Cards Grid -->
+        <div class="cards-grid cards-grid-3">
+          <!-- Wine 1 -->
+          <article class="cheese-craft-card">
+            <div class="cheese-craft-img-wrap">
+              <img src="assets/images/pairing_1.png" alt="Тельті-Курук Резерв біле вино" class="cheese-craft-img" loading="lazy">
+            </div>
+            <div class="cheese-craft-body">
+              <h3 class="cheese-craft-title">Тельті-Курук Резерв</h3>
+              
+              <div class="badge-row">
+                <span class="badge-ivory">Одещина</span>
+                <span class="badge-ivory">Біле сухе</span>
+                <span class="badge-ivory">2022</span>
+              </div>
+
+              <div class="badge-row">
+                <span class="badge-amber">Айва</span>
+                <span class="badge-amber">Біла акація</span>
+                <span class="badge-amber">Мінерали</span>
+              </div>
+
+              <p class="cheese-craft-desc">Український автохтон. Тонка хрустка кислотність і цитрусово-квітковий післясмак.</p>
+              
+              <div style="background: #F4EFE6; padding: 10px; border-radius: 8px; margin-top: 12px; font-size: 0.85rem;">
+                <strong>🧀 Рекомендована пара:</strong> Полтавський ніжний (95% Match Score)
+              </div>
+
+              <div style="margin-top: 14px;">
+                <a href="pairing-result.html" class="btn btn-primary-dark" style="font-size:0.85rem; padding: 6px 16px; width:100%;">Деталі поєднання →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Wine 2 -->
+          <article class="cheese-craft-card">
+            <div class="cheese-craft-img-wrap">
+              <img src="assets/images/pairing_3.png" alt="Одеський Чорний червоне вино" class="cheese-craft-img" loading="lazy">
+            </div>
+            <div class="cheese-craft-body">
+              <h3 class="cheese-craft-title">Одеський Чорний (Аліберне)</h3>
+
+              <div class="badge-row">
+                <span class="badge-ivory">Придунав'я</span>
+                <span class="badge-ivory">Червоне сухе</span>
+                <span class="badge-ivory">2021</span>
+              </div>
+
+              <div class="badge-row">
+                <span class="badge-amber">Чорнослив</span>
+                <span class="badge-amber">Шоколад</span>
+                <span class="badge-amber">Дуб</span>
+              </div>
+
+              <p class="cheese-craft-desc">Насичене, щільне танінне вино з глибоким кольором. Здатне збалансувати тверді витримані сири.</p>
+
+              <div style="background: #F4EFE6; padding: 10px; border-radius: 8px; margin-top: 12px; font-size: 0.85rem;">
+                <strong>🧀 Рекомендована пара:</strong> Гуцульський овечий (96% Match Score)
+              </div>
+
+              <div style="margin-top: 14px;">
+                <a href="pairing-result.html" class="btn btn-primary-dark" style="font-size:0.85rem; padding: 6px 16px; width:100%;">Деталі поєднання →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Wine 3 -->
+          <article class="cheese-craft-card">
+            <div class="cheese-craft-img-wrap">
+              <img src="assets/images/pairing_2.png" alt="Рислінг Амбер помаранчеве вино" class="cheese-craft-img" loading="lazy">
+            </div>
+            <div class="cheese-craft-body">
+              <h3 class="cheese-craft-title">Рислінг Бессарабський Амбер</h3>
+
+              <div class="badge-row">
+                <span class="badge-ivory">Бессарабія</span>
+                <span class="badge-ivory">Оранж / Амбер</span>
+                <span class="badge-ivory">2022</span>
+              </div>
+
+              <div class="badge-row">
+                <span class="badge-amber">Сухофрукти</span>
+                <span class="badge-amber">Горіх</span>
+                <span class="badge-amber">Цедра</span>
+              </div>
+
+              <p class="cheese-craft-desc">Тривала мацерація на шкірці дарує глибокий мідний відтінок, оксамитову терпкість і багатий букет.</p>
+
+              <div style="background: #F4EFE6; padding: 10px; border-radius: 8px; margin-top: 12px; font-size: 0.85rem;">
+                <strong>🧀 Рекомендована пара:</strong> Закарпатський напівтвердий (94% Match Score)
+              </div>
+
+              <div style="margin-top: 14px;">
+                <a href="pairing-result.html" class="btn btn-primary-dark" style="font-size:0.85rem; padding: 6px 16px; width:100%;">Деталі поєднання →</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="collection-bottom-cta">
+          <a href="pairing-wizard.html" class="btn btn-outline-collection">Підібрати сир під вашу пляшку</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. SECTION: CTA BANNER -->
+    <section class="wine-banner-section" aria-labelledby="wine-cta-title">
+      <div class="container wine-banner-container">
+        <span class="eyebrow-wine">ПІДБІР ПАРИ</span>
+        <h2 id="wine-cta-title" class="wine-banner-title">Маєте улюблене вино?</h2>
+        <p class="wine-banner-subtitle">Вкажіть сорт або настрій, і наш алгоритм миттєво знайде український крафтовий сир до столу.</p>
+        <div class="wine-banner-cta">
+          <a href="pairing-wizard.html" class="btn btn-gold">Запустити майстер підбору</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= SITE FOOTER ================= -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-container">
+      <div class="footer-top-grid">
+        <div class="footer-col brand-col">
+          <div class="footer-brand">
+            <img src="assets/images/somelia_sheep_icon.png" alt="SOMELIA" class="footer-logo-img" width="34" height="34">
+            <span class="footer-brand-title">SOMELIA</span>
+          </div>
+          <p class="footer-tagline">Платформа гастрономічної культури, що об'єднує поціновувачів крафтового українського сиру та шляхетного вина.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Навігація</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Головна</a></li>
+            <li><a href="cheese-catalog.html">Каталог сирів</a></li>
+            <li><a href="wine-catalog.html">Каталог вин</a></li>
+            <li><a href="pairing-wizard.html">Майстер підбору</a></li>
+            <li><a href="favorites.html">Обрані пари</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Терруари</h4>
+          <ul class="footer-links">
+            <li><a href="wine-catalog.html">Одещина &amp; Бессарабія</a></li>
+            <li><a href="wine-catalog.html">Закарпатські схили</a></li>
+            <li><a href="wine-catalog.html">Подільські товтри</a></li>
+            <li><a href="wine-catalog.html">Придунав'я</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Контакти</h4>
+          <p class="footer-contact-item">Київ, вул. Смаку, 12</p>
+          <p class="footer-contact-item">hello@somelia.ua</p>
+          <div class="footer-socials">
+            <a href="contacts.html">Про нас</a>
+            <a href="contacts.html">Зворотний зв'язок</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <p class="copyright">© 2026 SOMELIA. Усі права захищено. Лабораторна робота №5.</p>
+        <p class="made-with">Розроблено за Figma-прототипом (багатосторінкова верстка на чистому HTML5 / CSS3)</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Universal Mobile Navigation Script -->
+  <script src="js/mobile-nav.js" defer></script>
+</body>
+</html>
+
