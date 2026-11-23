@@ -1,0 +1,67 @@
+name: CI/CD Production Deploy
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  lint-and-audit:
+    name: Code Quality & Integrity Audit
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Verify Web Core Files & Performance Assets
+        run: |
+          echo "============================================="
+          echo "🚀 SOMELIA CI/CD: Automated Release Pipeline"
+          echo "============================================="
+          echo "Checking essential HTML, CSS, and JS files..."
+          test -f index.html || { echo "❌ index.html missing"; exit 1; }
+          test -f contacts.html || { echo "❌ contacts.html missing"; exit 1; }
+          test -f pairing-wizard.html || { echo "❌ pairing-wizard.html missing"; exit 1; }
+          test -f js/validation.js || { echo "❌ js/validation.js missing"; exit 1; }
+          test -f js/widget.js || { echo "❌ js/widget.js missing"; exit 1; }
+          test -f app.js || { echo "❌ app.js missing"; exit 1; }
+          test -f robots.txt || { echo "❌ robots.txt missing"; exit 1; }
+          test -f sitemap.xml || { echo "❌ sitemap.xml missing"; exit 1; }
+          echo "✅ All core files, widgets, and SEO assets verified successfully!"
+
+  deploy:
+    name: Production Release & Cloud Hosting
+    needs: lint-and-audit
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/heads/main'
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./
+          keep_files: false
+
+      - name: Deploy to Vercel (Production)
+        if: env.VERCEL_TOKEN != ''
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: |
+          npm install --global vercel@latest
+          vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+          vercel deploy --prod --yes --token=${{ secrets.VERCEL_TOKEN }}
