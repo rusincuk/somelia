@@ -240,3 +240,70 @@ body {
   font-size: 0.75rem;
   font-weight: 600;
 }
+
+/* ==========================================================================
+   10. Swiper.js v11 & Fancybox v5 Custom Styling (Laboratory Work #10)
+   ========================================================================== */
+.reviews-swiper {
+  padding-bottom: 54px !important;
+  position: relative;
+}
+
+.reviews-swiper .swiper-pagination-bullet {
+  background: #8A6D25;
+  opacity: 0.35;
+  width: 10px;
+  height: 10px;
+  transition: all 0.3s ease;
+}
+
+.reviews-swiper .swiper-pagination-bullet-active {
+  background: #EBD59B;
+  opacity: 1;
+  width: 26px;
+  border-radius: 9999px;
+}
+
+.reviews-swiper .swiper-button-next,
+.reviews-swiper .swiper-button-prev {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(32, 49, 39, 0.9);
+  color: #EBD59B !important;
+  border: 1px solid rgba(235, 213, 155, 0.4);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease;
+}
+
+.reviews-swiper .swiper-button-next:hover,
+.reviews-swiper .swiper-button-prev:hover {
+  background: #16241C;
+  color: #FFFFFF !important;
+  transform: scale(1.05);
+}
+
+.reviews-swiper .swiper-button-next::after,
+.reviews-swiper .swiper-button-prev::after {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+@media (max-width: 640px) {
+  .reviews-swiper .swiper-button-next,
+  .reviews-swiper .swiper-button-prev {
+    display: none;
+  }
+}
+
+/* Typed cursor blink */
+.typed-cursor {
+  opacity: 1;
+  animation: typed-blink 0.8s infinite;
+  color: #EBD59B;
+}
+
+@keyframes typed-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
